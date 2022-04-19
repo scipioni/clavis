@@ -50,6 +50,9 @@ images/board-back.png: output/pcbs/board.kicad_pcb
 images/board-front.png: output/pcbs/board.kicad_pcb
 	pcbdraw --style builtin:oshpark-afterdark.json output/pcbs/top_plate.kicad_pcb $@
 
+images/qmk.png:
+	convert /tmp/qmk.png -transparent white images/qmk.png
+
 show: output/routed_pcbs/board-front.png output/routed_pcbs/board-back.png output/routed_pcbs/top_plate-front.png output/routed_pcbs/bottom_plate-front.png
 	eog $<
 

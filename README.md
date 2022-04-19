@@ -2,10 +2,17 @@
 
 ## Split 36 key keyboard
 
+- PCB
+- qmk firmware
+- 3D models to print
+
 | left                            | right                           |
 | ------------------------------- | ------------------------------- |
 | ![left](images/board-front.png) | ![right](images/board-back.png) |
 
+![qmk](images/qmk.png)
+
+  
 A 5x3 split keyboard with 3 thumbs. It's inspired by Corne and
 has the exact number of keys needed for the [Miryoku](https://github.com/manna-harbour/miryoku) layout.
 
@@ -14,6 +21,8 @@ has the exact number of keys needed for the [Miryoku](https://github.com/manna-h
 - uses [FreeRouting](https://github.com/freerouting/freerouting) to **automatically route the traces on the PCB**
 - uses pcbdraw to render PCB previews
 - uses [KiKit](https://github.com/yaqwsx/KiKit) to render production-ready **Gerber files**
+- miryoku layout in folder ./qmk/, check ./qmk/README.md
+- blender model with stl in folder ./3d
 
 ## Features
 
