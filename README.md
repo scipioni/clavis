@@ -28,11 +28,9 @@ has the exact number of keys needed for the [Miryoku](https://github.com/manna-h
 - prereq:
   - nodejs
   - java >= 11
-- run `make setup clean all`
-- check the `output` folder for KiCad PCBs and Gerbers
-- optional: create png render with `make png` and check output/routed_pcbs/board-front.png
-
-See the [workflow](.github/workflows/build.yml) or the [Makefile](Makefile) for more details.
+- run `make setup clean`
+- run `make unrouted` to make unrouted pcb ready to be checked in kicad
+- go to step4 below
 
 ## Layout
 
@@ -92,7 +90,7 @@ make output/routed_pcbs/board.ses
 
 click with left mouse if loop
 
-### step 4: kicad: merge routed session
+### step 4: kicad - merge routed session
 
 with kicad gui:
 
@@ -103,6 +101,13 @@ with kicad gui:
 - save output/routed_pcbs/board.kicad_pcb
 
 or with cli: TODO
+
+## step 5: kikit - create gerbers
+
+create gerbers in output/gerbers
+```
+make gerbers
+```
 
 ## Convert output dxf to svg
 

@@ -1,13 +1,16 @@
 # .DELETE_ON_ERROR:
 .SECONDARY:
-.PHONY: clean all setup png show
-.DEFAULT: all
+.PHONY: clean gerbers setup png show unrouted
+.DEFAULT: gerber
 
 # container_cmd ?= docker
 # container_args ?= -w /board -v $(shell pwd):/board --rm
 
 setup: bin/freerouting-1.5.0.jar
 	npm install
+
+
+unrouted: output/routed_pcbs/board.ses
 
 # outputs from 
 output/pcbs/board.kicad_pcb output/pcbs/top_plate.kicad_pcb output/pcbs/bottom_plate.kicad_pcb &: clavis.yaml
@@ -20,7 +23,7 @@ output/pcbs/board.dsn: output/pcbs/board.kicad_pcb
 
 output/routed_pcbs/board.ses: output/pcbs/board.dsn
 	@mkdir -p $(shell dirname $@)
-	java -jar bin/freerouting-1.5.0.jar -de $< -do $@ -ap 50 -fo -pp 50
+	java -jar bin/freerouting-1.5.0.jar -de $< -do $@ -ap 50 -fo -pp 50 -dr clavis.rules
 
 output/routed_pcbs/%_plate.kicad_pcb: output/pcbs/%_plate.kicad_pcb
 	@mkdir -p $(shell dirname $@)
@@ -51,7 +54,7 @@ output/routed_pcbs/%-back.png: output/routed_pcbs/%.kicad_pcb
 
 output/gerbers/%/gerbers.zip: output/routed_pcbs/%.kicad_pcb
 	@mkdir -p $(shell dirname $@)
-	kikit fab jlcpcb --no-assembly $< $(shell dirname $@)
+	kikit fab jlcpcb --no-assembly --no-drc $< $(shell dirname $@)
 
 clean:
 	sudo rm -rf output
@@ -72,10 +75,10 @@ show: output/routed_pcbs/board-front.png output/routed_pcbs/board-back.png outpu
 bin/freerouting-1.5.0.jar:
 	mkdir -p bin && cd bin && wget https://github.com/freerouting/freerouting/releases/download/v1.5.0/freerouting-1.5.0.jar 
 
-all: \
+gerbers: \
 	output/gerbers/top_plate/gerbers.zip \
-	output/gerbers/bottom_plate/gerbers.zip
-#output/gerbers/board/gerbers.zip
+	output/gerbers/bottom_plate/gerbers.zip \
+	output/gerbers/board/gerbers.zip
 
 .venv:
 	python -m venv --system-site-packages .venv
