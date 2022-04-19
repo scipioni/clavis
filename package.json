@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "gen": "ergogen clavis.yaml"
+    },
+    "devDependencies": {
+        "ergogen": "^3.1.2"
+    }
+}

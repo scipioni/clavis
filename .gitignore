@@ -1,0 +1,9 @@
+node_modules
+output
+venv
+*.blend1
+.vscode
+/bin
+/logs
+.venv
+.tool-versions
