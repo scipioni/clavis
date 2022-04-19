@@ -5,6 +5,9 @@
 - [PCB](pcb/README.md)
 - [QMK](qmk/README.md)
 - [3D models](3d/)
+- TODO ZMK firmware
+
+![photo](images/photo.jpg)
 
 | left                            | right                           |
 | ------------------------------- | ------------------------------- |
@@ -16,6 +19,8 @@
 A 5x3 split keyboard with 3 thumbs. It's inspired by Corne and
 has the exact number of keys needed for the [Miryoku](https://github.com/manna-harbour/miryoku) layout.
 
+- Wireless ready mode with nice!nano (ZMK firmware)
+- Cables mode with TRSS cable and usb cable (QMK firwmare)
 - Layout is declared using [Ergogen](https://github.com/mrzealot/ergogen/) (https://github.com/soundmonster/ergogen.git fork)
 - The build system uses Ergogen to translate YAML to a KiCad PCB and plate files for FR-4 fab or laser cutting
 - uses [FreeRouting](https://github.com/freerouting/freerouting) to **automatically route the traces on the PCB**
