@@ -1,6 +1,6 @@
 # clavis qmk
 
-My clavis qmk layout with 36 keys and miryoku directives
+My clavis qmk ![layout](clavis/images/) with 36 keys and miryoku directives
 
 ## setup
 

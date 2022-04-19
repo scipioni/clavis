@@ -3,7 +3,7 @@
 ## Split 36 key keyboard
 
 - [PCB](pcb/README.md)
-- [QMK](qmk/README.md)
+- [QMK](qmk/README.md) firmware with ![Miryoku layout](qmk/clavis/README.md)
 - [3D models](3d/)
 - TODO ZMK firmware
 
