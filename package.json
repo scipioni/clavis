@@ -2,7 +2,7 @@
     "scripts": {
         "gen": "ergogen clavis.yaml"
     },
-    "devDependencies": {
-        "ergogen": "^3.1.2"
+    "dependencies": {
+        "ergogen": "github:soundmonster/ergogen#samoklava"
     }
 }

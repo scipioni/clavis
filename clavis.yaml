@@ -184,30 +184,6 @@ outlines:
         name: controller_area
         operation: add
     screw_holes:
-      xxx1:
-        type: circle
-        anchor:
-          - ref: matrix_pinky_top
-            shift: [-0 kx, 0 ky]
-        radius: 0.40
-      xxx2:
-        type: circle
-        anchor:
-          - ref: matrix_pinky_home
-            shift: [-0.0   (kx + px), 0 ky]
-        radius: 0.60
-      xxx3:
-        type: circle
-        anchor:
-          - ref: matrix_ring_top
-            shift: [-0 kx, 0 ky]
-        radius: 0.40
-      xxx4:
-        type: circle
-        anchor:
-          - ref: matrix_ring_home
-            shift: [-0 kx, 0 ky]
-        radius: 0.40
       top_left:
         type: circle
         anchor:
