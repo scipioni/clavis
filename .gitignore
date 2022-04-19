@@ -3,7 +3,7 @@ output
 venv
 *.blend1
 .vscode
-/bin
-/logs
+bin
+logs
 .venv
 .tool-versions
