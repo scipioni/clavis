@@ -63,7 +63,7 @@ gerbers: \
 
 .venv:
 	python -m venv --system-site-packages .venv
-	source .venv/bin/activate; pip install pcbdraw
+	source .venv/bin/activate; pip install -r requirements.txt
 
 release:
 	zip -qr /tmp/v0.2.zip output
