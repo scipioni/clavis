@@ -1,8 +1,9 @@
+FREEROUTING := 1.5.0
 
 .PHONY: clean gerbers setup show unrouted images release
 .DEFAULT: gerber
 
-setup: bin/freerouting-1.5.0.jar
+setup: bin/freerouting-$(FREEROUTING).jar
 	npm install
 
 unrouted: output/routed_pcbs/board.ses
@@ -17,7 +18,7 @@ output/pcbs/board.dsn: output/pcbs/board.kicad_pcb
 
 output/routed_pcbs/board.ses: output/pcbs/board.dsn
 	@mkdir -p $(shell dirname $@)
-	java -jar bin/freerouting-1.5.0.jar -de $< -do $@ -ap 50 -fo -pp 50 -dr clavis.rules
+	java -jar bin/freerouting-$(FREEROUTING).jar -de $< -do $@ -ap 50 -fo -pp 50 -dr clavis.rules
 
 output/routed_pcbs/%_plate.kicad_pcb: output/pcbs/%_plate.kicad_pcb
 	@mkdir -p $(shell dirname $@)
@@ -56,8 +57,8 @@ images/qmk.png:
 show: output/routed_pcbs/board-front.png output/routed_pcbs/board-back.png output/routed_pcbs/top_plate-front.png output/routed_pcbs/bottom_plate-front.png
 	eog $<
 
-bin/freerouting-1.5.0.jar:
-	mkdir -p bin && cd bin && wget https://github.com/freerouting/freerouting/releases/download/v1.5.0/freerouting-1.5.0.jar 
+bin/freerouting-$(FREEROUTING).jar:
+	mkdir -p bin && cd bin && wget https://github.com/freerouting/freerouting/releases/download/v$(FREEROUTING)/freerouting-$(FREEROUTING).jar 
 
 gerbers: \
 	output/gerbers/top_plate/gerbers.zip \

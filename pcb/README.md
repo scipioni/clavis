@@ -23,7 +23,7 @@ Edit clavis.yaml and check on
 
 ## TODO
 
-- import Specctre session with scripts/import_ses.py
+- import Specctra session with scripts/import_ses.py
 - fix pcbdraw of images/board-front.png
 -
 
@@ -53,6 +53,8 @@ open kicad pcb
 pcbnew output/pcbs/board.kicad_pcb
 ```
 
+![kicad](images/kicad.png)
+
 ### step 2: kicad - from kicad pcb -> to specctra DSN
 
 with kicad gui:
@@ -78,7 +80,7 @@ click with left mouse if loop
 with kicad gui:
 
 - open unrouted pcb: pcbnew output/pcbs/board.kicad_pcb
-- import ses file: Import -> Specctre session
+- import output/routed_pcbs/board.ses file: Import -> Specctra session
 - check DRC: Inspect -> DRC
 - ...
 - save output/routed_pcbs/board.kicad_pcb
