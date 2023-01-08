@@ -8,7 +8,7 @@
 - TODO ZMK firmware
 
 <div align="center">
-    <img src="images/photo.png">
+    <img src="images/photo.jpg">
     <img src="images/stl-preview.png">
     <img src="images/board-back.png"/>
     <img src="images/miryoku.png"/>
