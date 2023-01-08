@@ -7,13 +7,12 @@
 - [3D models](3d/)
 - TODO ZMK firmware
 
-![photo](images/photo.jpg)
-
-| left                            | right                           |
-| ------------------------------- | ------------------------------- |
-| ![left](images/board-front.png) | ![right](images/board-back.png) |
-
-![qmk](images/qmk.png)
+<div align="center">
+    <img src="images/photo.png">
+    <img src="images/stl-preview.png">
+    <img src="images/board-back.png"/>
+    <img src="images/miryoku.png"/>
+</div>
 
 A 5x3 split keyboard with 3 thumbs. It's inspired by Corne and
 has the exact number of keys needed for the [miryoku](https://github.com/manna-harbour/miryoku) keyboard layout.
@@ -25,7 +24,7 @@ has the exact number of keys needed for the [miryoku](https://github.com/manna-h
 - uses [freerouting](https://github.com/freerouting/freerouting) to **automatically route the traces on the PCB**
 - uses pcbdraw to render PCB previews
 - uses [kikit](https://github.com/yaqwsx/KiKit) to render production-ready **Gerber files**
-- miryoku qmk layout in folder [QMK](qmk/), check [QMK](qmk/README.md)
+- miryoku qmk layout in folder [QMK](qmk/), check [README](qmk/README.md)
 - blender model with stl in folder [3d](3d/)
 
 Howto:
