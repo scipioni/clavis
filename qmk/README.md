@@ -32,6 +32,10 @@ make compile
 make flash
 ```
 
+## TODO
+
+master and slave not detected at cold boot, see https://github.com/qmk/qmk_firmware/issues/8990
+
 ## avrdude advanced
 
 /etc/udev/ruled.d/55-caterina.rules

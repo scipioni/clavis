@@ -7,8 +7,9 @@
 #define USE_SERIAL_PD2
 
 #define SPLIT_USB_DETECT
-#define SPLIT_USB_TIMEOUT 5000
-#define SPLIT_USB_TIMEOUT_POLL 25
+#define SPLIT_USB_TIMEOUT 2000
+#define SPLIT_USB_TIMEOUT_POLL 10
+#define SPLIT_WATCHDOG_ENABLE
 
 /* Select hand configuration */
 #define MASTER_LEFT
