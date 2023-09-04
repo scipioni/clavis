@@ -6,10 +6,12 @@ VERSION := 0.22.2
 setup: qmk_firmware qmk_firmware/keyboards/crkbd/keymaps/clavis 
 
 compile: clavis/*
-	make -C qmk_firmware/ crkbd:clavis
+	#make -C qmk_firmware/ crkbd:clavis
+	cd qmk_firmware && qmk compile -kb crkbd -km clavis
 	
 flash:
-	make -C qmk_firmware/ crkbd:clavis:avrdude
+	#make -C qmk_firmware/ crkbd:clavis:avrdude
+	cd qmk_firmware && qmk flash -kb crkbd -km clavis
 
 qmk_firmware:
 	git clone -b ${VERSION} https://github.com/qmk/qmk_firmware.git && \
