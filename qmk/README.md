@@ -2,6 +2,10 @@
 
 My ![clavis layout](clavis/) with 36 keys and miryoku directives
 
+## prereq
+
+Add current shell user to uucp group or group that own /dev/ttyACM*
+
 ## setup
 
 setup qmk

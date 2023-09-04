@@ -1,4 +1,4 @@
-VERSION := 0.19.8
+VERSION := 0.19.12
 
 .PHONY: compile setup flash
 #.DEFAULT: all
