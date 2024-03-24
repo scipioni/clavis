@@ -1,5 +1,5 @@
 import sys                                                                                                                                                                                                                                           
-import pcbnew      
+from pcbnewTransition import pcbnew
 
 inputfile = sys.argv[1]
 if len(sys.argv) > 1:

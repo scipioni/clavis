@@ -1,5 +1,9 @@
 # Clavis PCB
 
+## References
+
+- https://flatfootfox.com/ergogen-part4-footprints-cases/
+
 ## Features
 
 - Extra pins and a slider switch for battery for wireless Promicro clones (nice!nano, etc); the slider can be shorted with a jumper if `CONFIG_ZMK_SLEEP` is preferred.
@@ -23,31 +27,25 @@
 
 - prereq:
   - nodejs
-  - java >= 11
-- run `make setup clean`
-- run `make unrouted` to make unrouted pcb ready to be checked in kicad
-- go to step4 below
+  - kicad 8
+  - java >= 11 (for method B: freerouting)
 
 ## Layout
 
-Edit clavis.yaml and check on
+Edit config.yaml and check on
 
 - https://ergogen.cache.works/
 
-## TODO
-
-- import Specctra session with scripts/import_ses.py
-- fix pcbdraw of images/board-front.png
--
 
 ## Introspection
 
-Input file of entire process is clavis.yaml in ergogen format.
+Input file of entire process is config.yaml in ergogen format.
 
 ### step 1: ergogen - from yaml -> to kicad pcb
 
 ```
-npm run gen
+# make clean
+make kicad
 ```
 
 output: kicad pcb
@@ -67,6 +65,14 @@ pcbnew output/pcbs/board.kicad_pcb
 ```
 
 ![kicad](images/kicad.png)
+
+## EasyEda routing (method A)
+
+### step 2: import kicad in easyeda
+
+import kicad project: File -> Open -> Kicad -> output/kicad.zip 
+
+## Freerouting routing (method B)
 
 ### step 2: kicad - from kicad pcb -> to specctra DSN
 
@@ -113,3 +119,8 @@ make gerbers
 ```
 https://convertio.co/
 ```
+## TODO
+
+- import Specctra session with scripts/import_ses.py
+- fix pcbdraw of images/board-front.png
+-

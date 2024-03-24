@@ -1,6 +1,6 @@
-FREEROUTING := 1.5.0
+FREEROUTING := 1.9.0
 
-.PHONY: clean gerbers setup show unrouted images release
+.PHONY: clean gerbers setup show unrouted images release kicad
 .DEFAULT: gerber
 
 setup: bin/freerouting-$(FREEROUTING).jar
@@ -8,8 +8,13 @@ setup: bin/freerouting-$(FREEROUTING).jar
 
 unrouted: output/routed_pcbs/board.ses
 
-output/pcbs/board.kicad_pcb output/pcbs/top_plate.kicad_pcb output/pcbs/bottom_plate.kicad_pcb &: clavis.yaml
+output/pcbs/board.kicad_pcb output/pcbs/top_plate.kicad_pcb output/pcbs/bottom_plate.kicad_pcb &: config.yaml
 	npm run gen
+	zip output/kicad.zip output/pcbs/*
+
+kicad: output/kicad.zip config.yaml
+
+output/kicad.zip: output/pcbs/board.kicad_pcb output/pcbs/top_plate.kicad_pcb output/pcbs/bottom_plate.kicad_pcb
 
 output/pcbs/board.dsn: output/pcbs/board.kicad_pcb
 	# file can not be present or the script will refuse to run
