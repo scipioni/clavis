@@ -3,6 +3,7 @@
 ## References
 
 - https://flatfootfox.com/ergogen-part4-footprints-cases/
+- https://github.com/sloba-byte/ergogen_howtos  
 
 ## Features
 
