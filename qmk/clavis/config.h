@@ -1,4 +1,4 @@
-
+// see https://precondition.github.io/home-row-mods#tap-hold-configuration-settings
 
 #pragma once
 
@@ -22,11 +22,9 @@
 
 #define USE_SERIAL_PD2
 
-#undef TAPPING_TERM
+//#undef TAPPING_TERM
 #define TAPPING_TERM 200
-
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define TAPPING_FORCE_HOLD
+#define QUICK_TAP_TERM 0
 
 // Auto Shift
 #define NO_AUTO_SHIFT_ALPHA
