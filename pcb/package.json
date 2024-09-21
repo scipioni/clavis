@@ -3,6 +3,6 @@
     "gen": "ergogen -d ."
   },
   "dependencies": {
-    "ergogen": "github:ergogen/ergogen#v4.0.5"
+    "ergogen": "^4.1.0"
   }
 }
