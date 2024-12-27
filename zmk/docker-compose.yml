@@ -1,0 +1,24 @@
+name: "zmk"
+
+services:
+  zmk:
+    image: zmkfirmware/zmk-build-arm:3.5-branch
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # command: ["/scripts/run-api.sh", "--port", "8000", "--reload"]
+    # env_file:
+    #   - ./src/.env
+    # ports:
+    #   - "8000:8000"
+    # depends_on:
+    #   - db
+    #   - redis
+    volumes:
+     - ./zmk-clavis:/zmk
+    #   - ./tests:/code/tests
+    #   - ./scripts:/scripts
+    #   - ./assets:/assets
+    # environment:
+    #   - TZ=Europe/Rome
+

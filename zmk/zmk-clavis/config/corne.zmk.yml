@@ -1,0 +1,15 @@
+file_format: "1"
+id: samoklava
+name: Samoklava
+type: shield
+url: https://github.com/soundmonster/samoklava/
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - underglow
+siblings:
+  - corne_left
+  - corne_right
+
