@@ -1,14 +1,12 @@
 file_format: "1"
-id: samoklava
-name: Samoklava
+id: clavis
+name: clavis
 type: shield
-url: https://github.com/soundmonster/samoklava/
+url: https://github.com/scipioni/clavis/
 requires: [pro_micro]
 exposes: [i2c_oled]
 features:
   - keys
-  - display
-  - underglow
 siblings:
   - corne_left
   - corne_right

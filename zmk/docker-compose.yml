@@ -2,7 +2,7 @@ name: "zmk"
 
 services:
   zmk:
-    image: zmkfirmware/zmk-build-arm:3.5-branch
+    image: zmkfirmware/zmk-build-arm:stable
     # build:
     #   context: .
     #   dockerfile: Dockerfile
@@ -15,10 +15,12 @@ services:
     #   - db
     #   - redis
     volumes:
-     - ./zmk-clavis:/zmk
+      - ./zmk-clavis:/zmk
+    #  - ./build:/build
+      - ./firmware:/firmware
     #   - ./tests:/code/tests
     #   - ./scripts:/scripts
     #   - ./assets:/assets
-    # environment:
-    #   - TZ=Europe/Rome
+    environment:
+      - CMAKE_PREFIX_PATH=/zmk/zephyr
 
