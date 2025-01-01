@@ -16,3 +16,7 @@ firmware/clavis_left.uf2: zmk-clavis/config/corne.h zmk-clavis/config/corne.conf
 
 clean:
 	rm -f firmware/*
+
+raw-keymap:
+	# pip install pcpp
+	pcpp --passthru-unfound-includes zmk-clavis/config/corne.keymap
