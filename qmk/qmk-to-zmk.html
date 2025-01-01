@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+  <h1>QMK JSON to ZMK Keymap converter</h1>
+  
+  <div>
+    To use, paste your JSON from the <a href="https://config.qmk.fm/">QMK
+    Configurator</a> into the left input, and the output keymap will be in the
+    right text input.  Note that there may be differences in how rows are
+    interpreted on split keyboards.
+  </div>
+  <div style="margin-bottom:2vh;">For more information, see the <a href="https://github.com/aaronsantiago/qmk-to-zmk">Github repository</a>.</div>
+  <div style="margin-bottom:2vh;">
+    <input oninput="updateKeymap();" type="checkbox" id="noop_missing" value="&none">
+    Check to ignore missing keys, or uncheck to highlight with [[]] for manual repair.
+  </div>
+  <div><div style="float:left;width: 45vw">Input QMK JSON</div><div style="float:right;width: 45vw">Output ZMK Keymap</div></div>
+  <div><input type="file" id="fileUpload"/></div>
+  
+  <textarea oninput="updateKeymap();" id="inputText" style="width:45vw; height: 50vh;">{
+    "version": 1,
+    "notes": "https://github.com/manna-harbour/miryoku",
+    "documentation": "\"This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
+    "keyboard": "crkbd/rev1",
+    "keymap": "crkbd_rev1_clavis",
+    "layout": "LAYOUT_split_3x5_3",
+    "layers": [
+      [
+        "KC_Q",
+        "KC_W",
+        "KC_E",
+        "KC_R",
+        "KC_T",
+        "KC_Y",
+        "KC_U",
+        "KC_I",
+        "KC_O",
+        "KC_P",
+        "LGUI_T(KC_A)",
+        "LALT_T(KC_S)",
+        "LCTL_T(KC_D)",
+        "LSFT_T(KC_F)",
+        "KC_G",
+        "KC_H",
+        "LSFT_T(KC_J)",
+        "LCTL_T(KC_K)",
+        "LALT_T(KC_L)",
+        "LGUI_T(KC_SCLN)",
+        "LT(1,KC_Z)",
+        "RALT_T(KC_X)",
+        "KC_C",
+        "KC_V",
+        "KC_B",
+        "KC_N",
+        "KC_M",
+        "KC_COMM",
+        "RALT_T(KC_DOT)",
+        "LT(1,KC_SLSH)",
+        "LT(3,KC_ESC)",
+        "LT(1,KC_SPC)",
+        "LT(2,KC_TAB)",
+        "LT(5,KC_ENT)",
+        "LT(4,KC_BSPC)",
+        "LT(6,KC_DEL)"
+      ],
+      [
+        "ANY(QK_REBOOT)",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_AGIN",
+        "KC_UNDO",
+        "LSFT(KC_DEL)",
+        "LCTL(KC_INS)",
+        "LSFT(KC_INS)",
+        "KC_LGUI",
+        "KC_LALT",
+        "KC_LCTL",
+        "KC_LSFT",
+        "KC_NO",
+        "KC_CAPS",
+        "KC_LEFT",
+        "KC_DOWN",
+        "KC_UP",
+        "KC_RGHT",
+        "KC_NO",
+        "LCTL(KC_X)",
+        "LCTL(KC_C)",
+        "LCTL(KC_V)",
+        "KC_NO",
+        "KC_INS",
+        "KC_HOME",
+        "KC_PGDN",
+        "KC_PGUP",
+        "KC_END",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_ENT",
+        "KC_BSPC",
+        "KC_DEL"
+      ],
+      [
+        "ANY(QK_REBOOT)",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_LGUI",
+        "KC_LALT",
+        "KC_LCTL",
+        "KC_LSFT",
+        "KC_NO",
+        "KC_NO",
+        "KC_MS_L",
+        "KC_MS_D",
+        "KC_MS_U",
+        "KC_MS_R",
+        "KC_NO",
+        "KC_RALT",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_WH_L",
+        "KC_WH_D",
+        "KC_WH_U",
+        "KC_WH_R",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_BTN2",
+        "KC_BTN1",
+        "KC_BTN3"
+      ],
+      [
+        "KC_NO",
+        "KC_P7",
+        "KC_P8",
+        "KC_P9",
+        "KC_NO",
+        "RGB_TOG",
+        "RGB_MOD",
+        "RGB_HUI",
+        "RGB_SAI",
+        "RGB_VAI",
+        "KC_NO",
+        "KC_P4",
+        "KC_P5",
+        "KC_P6",
+        "KC_NO",
+        "KC_NO",
+        "KC_MPRV",
+        "KC_VOLD",
+        "KC_VOLU",
+        "KC_MNXT",
+        "KC_P0",
+        "KC_P1",
+        "KC_P2",
+        "KC_P3",
+        "KC_PDOT",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "ANY(QK_REBOOT)",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_MSTP",
+        "KC_MPLY",
+        "KC_MUTE"
+      ],
+      [
+        "KC_LBRC",
+        "KC_7",
+        "KC_8",
+        "KC_9",
+        "KC_RBRC",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "ANY(QK_REBOOT)",
+        "KC_QUOT",
+        "KC_4",
+        "KC_5",
+        "KC_6",
+        "KC_EQL",
+        "KC_NO",
+        "KC_LSFT",
+        "KC_LCTL",
+        "KC_LALT",
+        "KC_LGUI",
+        "KC_GRV",
+        "KC_1",
+        "KC_2",
+        "KC_3",
+        "KC_BSLS",
+        "KC_NO",
+        "RALT(KC_QUOT)",
+        "RSA(KC_QUOT)",
+        "KC_RALT",
+        "KC_NO",
+        "KC_DOT",
+        "KC_0",
+        "KC_MINS",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO"
+      ],
+      [
+        "KC_LCBR",
+        "KC_AMPR",
+        "KC_ASTR",
+        "KC_LPRN",
+        "KC_RCBR",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "ANY(QK_REBOOT)",
+        "KC_COLN",
+        "KC_DLR",
+        "KC_PERC",
+        "KC_CIRC",
+        "KC_PLUS",
+        "KC_NO",
+        "KC_LSFT",
+        "KC_LCTL",
+        "KC_LALT",
+        "KC_LGUI",
+        "KC_TILD",
+        "KC_EXLM",
+        "KC_AT",
+        "KC_HASH",
+        "KC_PIPE",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_RALT",
+        "KC_NO",
+        "KC_LPRN",
+        "KC_RPRN",
+        "KC_UNDS",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO"
+      ],
+      [
+        "KC_F12",
+        "KC_F7",
+        "KC_F8",
+        "KC_F9",
+        "KC_PSCR",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "ANY(QK_REBOOT)",
+        "KC_F11",
+        "KC_F4",
+        "KC_F5",
+        "KC_F6",
+        "KC_SCRL",
+        "KC_NO",
+        "KC_LSFT",
+        "KC_LCTL",
+        "KC_LALT",
+        "KC_LGUI",
+        "KC_F10",
+        "KC_F1",
+        "KC_F2",
+        "KC_F3",
+        "KC_PAUS",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_RALT",
+        "KC_NO",
+        "KC_APP",
+        "KC_SPC",
+        "KC_TAB",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO"
+      ]
+    ],
+    "author": "Manna Harbour"
+  }</textarea>
+
+  <textarea id="output" style="width:45vw; height: 50vh;">your zmk keymap will show up here</textarea>
+
+<script>
+
+// ****************** KEY MAPS ********************************
+// No, not keymaps...key maps. These dictionaries hold the mappings from QMK to ZMK codes.
+
+// These will be translated directly as the string on the right.
+let special_key_map = {
+"KC_TRNS" : "&trans",
+"KC_NO" : "&none",
+"RESET": "&sys_reset",
+// others
+"QK_REBOOT": "&sys_reset",
+"KC_MS_L": "&mmv MOVE_LEFT",
+"KC_MS_D": "&mmv MOVE_DOWN",
+"KC_MS_U": "&mmv MOVE_UP",
+"KC_MS_R": "&mmv MOVE_RIGHT",
+"KC_WH_L": "&msc SCRL_LEFT",
+"KC_WH_D": "&msc SCRL_DOWN",
+"KC_WH_U": "&msc SCRL_UP",
+"KC_WH_R": "&msc SCRL_RIGHT",
+"KC_BTN1": "&mkp MB1",
+"KC_BTN2": "&mkp MB2",
+"KC_BTN3": "&mkp MB3",
+"RGB_TOG": "&rgb_ug RGB_TOG",
+"RGB_MOD": "&rgb_ug RGB_EFF",
+"RGB_SAI": "&rgb_ug RGB_SAI",
+"RGB_HUI": "&rgb_ug RGB_HUI",
+"RGB_VAI": "&rgb_ug RGB_BRI",
+// Enabling this broke the build, unclear why; disabled but leaving for reference.
+// "KC_MS_BTN1": "&mkp LCLK",
+// "KC_MS_BTN2": "&mkp RCLK",
+// "KC_MS_BTN3": "&mkp MCLK",
+// "KC_MS_BTN4": "&mkp MB4",
+// "KC_MS_BTN5": "&mkp MB5",
+// "KC_BTN1": "&mkp LCLK",
+// "KC_BTN2": "&mkp RCLK",
+// "KC_BTN3": "&mkp MCLK",
+// "KC_BTN4": "&mkp MB4",
+// "KC_BTN5": "&mkp MB5",
+};
+
+// These are translated with &kp as a prefix.
+  // Any keys I was unsure of are set as F20 --Aaron
+let basic_key_map = {
+"KC_A" : "A",
+"KC_B" : "B",
+"KC_C" : "C",
+"KC_D" : "D",
+"KC_E" : "E",
+"KC_F" : "F",
+"KC_G" : "G",
+"KC_H" : "H",
+"KC_I" : "I",
+"KC_J" : "J",
+"KC_K" : "K",
+"KC_L" : "L",
+"KC_M" : "M",
+"KC_N" : "N",
+"KC_O" : "O",
+"KC_P" : "P",
+"KC_Q" : "Q",
+"KC_R" : "R",
+"KC_S" : "S",
+"KC_T" : "T",
+"KC_U" : "U",
+"KC_V" : "V",
+"KC_W" : "W",
+"KC_X" : "X",
+"KC_Y" : "Y",
+"KC_Z" : "Z",
+"KC_1" : "N1",
+"KC_2" : "N2",
+"KC_3" : "N3",
+"KC_4" : "N4",
+"KC_5" : "N5",
+"KC_6" : "N6",
+"KC_7" : "N7",
+"KC_8" : "N8",
+"KC_9" : "N9",
+"KC_0" : "N0",
+"KC_ENTER" : "ENTER",
+"KC_ESCAPE" : "ESCAPE",
+"KC_BACKSPACE" : "BACKSPACE",
+"KC_TAB" : "TAB",
+"KC_SPACE" : "SPACE",
+"KC_MINUS" : "MINUS",
+"KC_EQUAL" : "EQUAL",
+"KC_LEFT_BRACKET" : "LEFT_BRACKET",
+"KC_RIGHT_BRACKET" : "RIGHT_BRACKET",
+"KC_BACKSLASH" : "BACKSLASH",
+"KC_NONUS_HASH" : "NONUS_HASH",
+"KC_SEMICOLON" : "SEMICOLON",
+"KC_QUOTE" : "QUOTE",
+"KC_GRAVE" : "GRAVE",
+"KC_COMMA" : "COMMA",
+"KC_DOT" : "DOT",
+"KC_SLASH" : "SLASH",
+"KC_CAPS_LOCK" : "CAPSLOCK",
+"KC_F1" : "F1",
+"KC_F2" : "F2",
+"KC_F3" : "F3",
+"KC_F4" : "F4",
+"KC_F5" : "F5",
+"KC_F6" : "F6",
+"KC_F7" : "F7",
+"KC_F8" : "F8",
+"KC_F9" : "F9",
+"KC_F10" : "F10",
+"KC_F11" : "F11",
+"KC_F12" : "F12",
+"KC_PRINT_SCREEN" : "PRINTSCREEN",
+"KC_SCROLL_LOCK" : "SCROLLLOCK",
+"KC_PAUSE" : "PAUSE_BREAK",
+"KC_INSERT" : "INSERT",
+"KC_HOME" : "HOME",
+"KC_PAGE_UP" : "PAGE_UP",
+"KC_DELETE" : "DELETE",
+"KC_END" : "END",
+"KC_PAGE_DOWN" : "PAGE_DOWN",
+"KC_RIGHT" : "RIGHT",
+"KC_LEFT" : "LEFT",
+"KC_DOWN" : "DOWN",
+"KC_UP" : "UP",
+"KC_NUM_LOCK" : "LOCKING_NUM",
+"KC_KP_SLASH" : "KP_SLASH",
+"KC_KP_ASTERISK" : "KP_ASTERISK",
+"KC_KP_MINUS" : "KP_MINUS",
+"KC_KP_PLUS" : "KP_PLUS",
+"KC_KP_ENTER" : "KP_ENTER",
+"KC_KP_1" : "KP_N1",
+"KC_KP_2" : "KP_N2",
+"KC_KP_3" : "KP_N3",
+"KC_KP_4" : "KP_N4",
+"KC_KP_5" : "KP_N5",
+"KC_KP_6" : "KP_N6",
+"KC_KP_7" : "KP_N7",
+"KC_KP_8" : "KP_N8",
+"KC_KP_9" : "KP_N9",
+"KC_KP_0" : "KP_N0",
+"KC_KP_DOT" : "KP_DOT",
+"KC_NONUS_BACKSLASH" : "NON_US_BACKSLASH",
+"KC_APPLICATION" : "K_APPLICATION",
+"KC_KB_POWER" : "C_POWER",
+"KC_KP_EQUAL" : "KP_EQUAL",
+"KC_F13" : "F13",
+"KC_F14" : "F14",
+"KC_F15" : "F15",
+"KC_F16" : "F16",
+"KC_F17" : "F17",
+"KC_F18" : "F18",
+"KC_F19" : "F19",
+"KC_F20" : "F20",
+"KC_F21" : "F21",
+"KC_F22" : "F22",
+"KC_F23" : "F23",
+"KC_F24" : "F24",
+"KC_EXECUTE" : "K_EXECUTE",
+"KC_HELP" : "C_HELP",
+"KC_MENU" : "C_MENU",
+"KC_SELECT" : "K_SELECT",
+"KC_STOP" : "C_STOP",
+"KC_AGAIN" : "K_AGAIN",
+"KC_UNDO" : "K_UNDO",
+"KC_CUT" : "K_CUT",
+"KC_COPY" : "K_COPY",
+"KC_PASTE" : "PASTE",
+"KC_FIND" : "FIND",
+"KC_KB_MUTE" : "KB_MUTE",
+"KC_KB_VOLUME_UP" : "C_VOLUME_UP",
+"KC_KB_VOLUME_DOWN" : "C_VOLUME_DOWN",
+"KC_LOCKING_CAPS_LOCK" : "LOCKING_CAPS",
+"KC_LOCKING_NUM_LOCK" : "LOCKING_NUM",
+"KC_LOCKING_SCROLL_LOCK" : "LOCKING_SCROLL",
+"KC_KP_COMMA" : "KP_COMMA",
+"KC_KP_EQUAL_AS400" : "KP_EQUAL_AS400",
+"KC_INTERNATIONAL_1" : "INTERNATIONAL_1",
+"KC_INTERNATIONAL_2" : "INTERNATIONAL_2",
+"KC_INTERNATIONAL_3" : "INTERNATIONAL_3",
+"KC_INTERNATIONAL_4" : "INTERNATIONAL_4",
+"KC_INTERNATIONAL_5" : "INTERNATIONAL_5",
+"KC_INTERNATIONAL_6" : "INTERNATIONAL_6",
+"KC_INTERNATIONAL_7" : "INTERNATIONAL_7",
+"KC_INTERNATIONAL_8" : "INTERNATIONAL_8",
+"KC_INTERNATIONAL_9" : "INTERNATIONAL_9",
+"KC_LANGUAGE_1" : "LANGUAGE_1",
+"KC_LANGUAGE_2" : "LANGUAGE_2",
+"KC_LANGUAGE_3" : "LANGUAGE_3",
+"KC_LANGUAGE_4" : "LANGUAGE_4",
+"KC_LANGUAGE_5" : "LANGUAGE_5",
+"KC_LANGUAGE_6" : "LANGUAGE_6",
+"KC_LANGUAGE_7" : "LANGUAGE_7",
+"KC_LANGUAGE_8" : "LANGUAGE_8",
+"KC_LANGUAGE_9" : "LANGUAGE_9",
+"KC_ALTERNATE_ERASE" : "ALT_ERASE",
+"KC_SYSTEM_REQUEST" : "SYSREQ",
+"KC_CANCEL" : "K_CANCEL",
+"KC_CLEAR" : "CLEAR",
+"KC_PRIOR" : "PRIOR",
+"KC_RETURN" : "RETURN",
+"KC_SEPARATOR" : "SEPARATOR",
+"KC_OUT" : "OUT",
+"KC_OPER" : "OPER",
+"KC_CLEAR_AGAIN" : "CLEAR_AGAIN",
+"KC_CRSEL" : "CRSEL",
+"KC_EXSEL" : "EXSEL",
+"KC_LEFT_CTRL" : "LEFT_CONTROL",
+"KC_LEFT_SHIFT" : "LEFT_SHIFT",
+"KC_LEFT_ALT" : "LEFT_ALT",
+"KC_LEFT_GUI" : "LEFT_GUI",
+"KC_RIGHT_CTRL" : "RIGHT_CONTROL",
+"KC_RIGHT_SHIFT" : "RIGHT_SHIFT",
+"KC_RIGHT_ALT" : "RIGHT_ALT",
+"KC_RIGHT_GUI" : "RIGHT_GUI",
+"KC_SYSTEM_POWER" : "C_POWER",
+"KC_SYSTEM_SLEEP" : "C_SLEEP",
+"KC_SYSTEM_WAKE" : "C_POWER",
+"KC_AUDIO_MUTE" : "C_MUTE",
+"KC_AUDIO_VOL_UP" : "C_VOLUME_UP",
+"KC_AUDIO_VOL_DOWN" : "C_VOLUME_DOWN",
+"KC_MEDIA_NEXT_TRACK" : "C_NEXT",
+"KC_MEDIA_PREV_TRACK" : "C_PREVIOUS",
+"KC_MEDIA_STOP" : "C_STOP",
+"KC_MEDIA_PLAY_PAUSE" : "C_PLAY_PAUSE",
+"KC_MEDIA_SELECT" : "F20",
+"KC_MEDIA_EJECT" : "C_EJECT",
+"KC_MAIL" : "C_AL_EMAIL",
+"KC_CALCULATOR" : "C_AL_CALCULATOR",
+"KC_MY_COMPUTER" : "C_AL_MY_COMPUTER",
+"KC_WWW_SEARCH" : "C_AC_SEARCH",
+"KC_WWW_HOME" : "C_AC_HOME",
+"KC_WWW_BACK" : "C_AC_BACK",
+"KC_WWW_FORWARD" : "C_AC_FORWARD",
+"KC_WWW_STOP" : "C_AC_STOP",
+"KC_WWW_REFRESH" : "C_AC_REFRESH",
+"KC_WWW_FAVORITES" : "C_AC_FAVORITES",
+"KC_MEDIA_FAST_FORWARD" : "C_FAST_FORWARD",
+"KC_MEDIA_REWIND" : "C_REWIND",
+"KC_BRIGHTNESS_UP" : "C_BRIGHTNESS_INC",
+"KC_BRIGHTNESS_DOWN" : "C_BRIGHTNESS_DEC",
+"KC_ENT": "ENTER",
+"KC_ESC": "ESCAPE",
+"KC_BSPC": "BACKSPACE",
+"KC_SPC": "SPACE",
+"KC_MINS": "MINUS",
+"KC_EQL": "EQUAL",
+"KC_LBRC": "LEFT_BRACKET",
+"KC_LCBR": "LEFT_BRACE",
+"KC_RBRC": "RIGHT_BRACKET",
+"KC_BSLS": "BACKSLASH",
+"KC_NUHS": "NON_US_HASH",
+"KC_SCLN": "SEMICOLON",
+"KC_QUOT": "SINGLE_QUOTE",
+"KC_GRV": "GRAVE",
+"KC_COMM": "COMMA",
+"KC_SLSH": "SLASH",
+"KC_CAPS": "CAPSLOCK",
+"KC_PSCR": "PRINTSCREEN",
+"KC_SCRL": "SCROLLLOCK",
+"KC_BRMD": "SCROLLLOCK",
+"KC_PAUS": "PAUSE_BREAK",
+"KC_BRK": "PAUSE_BREAK",
+"KC_BRMU": "PAUSE_BREAK",
+"KC_INS": "INSERT",
+"KC_PGUP": "PAGE_UP",
+"KC_DEL": "DELETE",
+"KC_PGDN": "PAGE_DOWN",
+"KC_RGHT": "RIGHT",
+"KC_NUM": "LOCKING_NUM",
+"KC_PSLS": "KP_SLASH",
+"KC_PAST": "KP_ASTERISK",
+"KC_PMNS": "KP_MINUS",
+"KC_PPLS": "KP_PLUS",
+"KC_PENT": "KP_ENTER",
+"KC_P1": "KP_N1",
+"KC_P2": "KP_N2",
+"KC_P3": "KP_N3",
+"KC_P4": "KP_N4",
+"KC_P5": "KP_N5",
+"KC_P6": "KP_N6",
+"KC_P7": "KP_N7",
+"KC_P8": "KP_N8",
+"KC_P9": "KP_N9",
+"KC_P0": "KP_N0",
+"KC_PDOT": "KP_DOT",
+"KC_NUBS": "NON_US_BACKSLASH",
+"KC_APP": "K_APPLICATION",
+"KC_PEQL": "KP_EQUAL",
+"KC_EXEC": "K_EXECUTE",
+"KC_SLCT": "K_SELECT",
+"KC_AGIN": "K_AGAIN",
+"KC_PSTE": "C_AC_PASTE",
+"KC_LCAP": "LOCKING_CAPS",
+"KC_LNUM": "LOCKING_NUM",
+"KC_LSCR": "LOCKING_SCROLL",
+"KC_PCMM": "KP_COMMA",
+"KC_INT1": "INTERNATIONAL_1",
+"KC_INT2": "INTERNATIONAL_2",
+"KC_INT3": "INTERNATIONAL_3",
+"KC_INT4": "INTERNATIONAL_4",
+"KC_INT5": "INTERNATIONAL_5",
+"KC_INT6": "INTERNATIONAL_6",
+"KC_INT7": "INTERNATIONAL_7",
+"KC_INT8": "INTERNATIONAL_8",
+"KC_INT9": "INTERNATIONAL_9",
+"KC_LNG1": "LANGUAGE_1",
+"KC_LNG2": "LANGUAGE_2",
+"KC_LNG3": "LANGUAGE_3",
+"KC_LNG4": "LANGUAGE_4",
+"KC_LNG5": "LANGUAGE_5",
+"KC_LNG6": "LANGUAGE_6",
+"KC_LNG7": "LANGUAGE_7",
+"KC_LNG8": "LANGUAGE_8",
+"KC_LNG9": "LANGUAGE_9",
+"KC_ERAS": "ALT_ERASE",
+"KC_SYRQ": "SYSREQ",
+"KC_CNCL": "K_CANCEL",
+"KC_CLR": "CLEAR",
+"KC_PRIR": "PRIOR",
+"KC_RETN": "RETURN",
+"KC_SEPR": "SEPARATOR",
+"KC_CLAG": "CLEAR_AGAIN",
+"KC_CRSL": "CRSEL",
+"KC_EXSL": "EXSEL",
+"KC_LCTL": "LEFT_CONTROL",
+"KC_LSFT": "LEFT_SHIFT",
+"KC_LALT": "LEFT_ALT",
+"KC_LOPT": "LEFT_ALT",
+"KC_LGUI": "LEFT_GUI",
+"KC_LCMD": "LEFT_GUI",
+"KC_LWIN": "LEFT_GUI",
+"KC_RCTL": "RIGHT_CONTROL",
+"KC_RSFT": "RIGHT_SHIFT",
+"KC_RALT": "RIGHT_ALT",
+"KC_ROPT": "RIGHT_ALT",
+"KC_ALGR": "RIGHT_ALT",
+"KC_RGUI": "RIGHT_GUI",
+"KC_RCMD": "RIGHT_GUI",
+"KC_RWIN": "RIGHT_GUI",
+"KC_PWR": "C_POWER",
+"KC_SLEP": "C_SLEEP",
+"KC_WAKE": "C_POWER",
+"KC_MUTE": "C_MUTE",
+"KC_VOLU": "C_VOLUME_UP",
+"KC_VOLD": "C_VOLUME_DOWN",
+"KC_MNXT": "C_NEXT",
+"KC_MPRV": "C_PREVIOUS",
+"KC_MSTP": "C_STOP",
+"KC_MPLY": "C_PLAY_PAUSE",
+"KC_MSEL": "F20",
+"KC_EJCT": "C_EJECT",
+"KC_CALC": "C_AL_CALCULATOR",
+"KC_MYCM": "C_AL_MY_COMPUTER",
+"KC_WSCH": "C_AC_SEARCH",
+"KC_WHOM": "C_AC_HOME",
+"KC_WBAK": "C_AC_BACK",
+"KC_WFWD": "C_AC_FORWARD",
+"KC_WSTP": "C_AC_STOP",
+"KC_WREF": "C_AC_REFRESH",
+"KC_WFAV": "C_AC_FAVORITES",
+"KC_MFFD": "C_FAST_FORWARD",
+"KC_MRWD": "C_REWIND",
+
+// alternate keys
+"KC_ENT": "ENTER",
+"KC_ESC": "ESCAPE",
+"KC_BSPC": "BACKSPACE",
+"KC_SPC": "SPACE",
+"KC_MINS": "MINUS",
+"KC_EQL": "EQUAL",
+"KC_LBRC": "LEFT_BRACKET",
+"KC_RBRC": "RIGHT_BRACKET",
+"KC_BSLS": "BACKSLASH",
+"KC_NUHS": "NON_US_HASH",
+"KC_SCLN": "SEMICOLON",
+"KC_QUOT": "SINGLE_QUOTE",
+"KC_GRV": "GRAVE",
+"KC_COMM": "COMMA",
+"KC_SLSH": "SLASH",
+"KC_CAPS": "CAPSLOCK",
+"KC_PSCR": "PRINTSCREEN",
+"KC_SCRL": "SCROLLLOCK",
+"KC_BRMD": "SCROLLLOCK",
+"KC_PAUS": "PAUSE_BREAK",
+"KC_BRK": "PAUSE_BREAK",
+"KC_BRMU": "PAUSE_BREAK",
+"KC_INS": "INSERT",
+"KC_PGUP": "PAGE_UP",
+"KC_DEL": "DELETE",
+"KC_PGDN": "PAGE_DOWN",
+"KC_RGHT": "RIGHT",
+"KC_NUM": "LOCKING_NUM",
+"KC_PSLS": "KP_SLASH",
+"KC_PAST": "KP_ASTERISK",
+"KC_PMNS": "KP_MINUS",
+"KC_PPLS": "KP_PLUS",
+"KC_PENT": "KP_ENTER",
+"KC_P1": "KP_N1",
+"KC_P2": "KP_N2",
+"KC_P3": "KP_N3",
+"KC_P4": "KP_N4",
+"KC_P5": "KP_N5",
+"KC_P6": "KP_N6",
+"KC_P7": "KP_N7",
+"KC_P8": "KP_N8",
+"KC_P9": "KP_N9",
+"KC_P0": "KP_N0",
+"KC_PDOT": "KP_DOT",
+"KC_NUBS": "NON_US_BACKSLASH",
+"KC_APP": "K_APPLICATION",
+"KC_PEQL": "KP_EQUAL",
+"KC_EXEC": "K_EXECUTE",
+"KC_SLCT": "K_SELECT",
+"KC_AGIN": "K_AGAIN",
+"KC_PSTE": "K_PASTE",
+"KC_LCAP": "LOCKING_CAPS",
+"KC_LNUM": "LOCKING_NUM",
+"KC_LSCR": "LOCKING_SCROLL",
+"KC_PCMM": "KP_COMMA",
+"KC_INT1": "INTERNATIONAL_1",
+"KC_INT2": "INTERNATIONAL_2",
+"KC_INT3": "INTERNATIONAL_3",
+"KC_INT4": "INTERNATIONAL_4",
+"KC_INT5": "INTERNATIONAL_5",
+"KC_INT6": "INTERNATIONAL_6",
+"KC_INT7": "INTERNATIONAL_7",
+"KC_INT8": "INTERNATIONAL_8",
+"KC_INT9": "INTERNATIONAL_9",
+"KC_LNG1": "LANGUAGE_1",
+"KC_LNG2": "LANGUAGE_2",
+"KC_LNG3": "LANGUAGE_3",
+"KC_LNG4": "LANGUAGE_4",
+"KC_LNG5": "LANGUAGE_5",
+"KC_LNG6": "LANGUAGE_6",
+"KC_LNG7": "LANGUAGE_7",
+"KC_LNG8": "LANGUAGE_8",
+"KC_LNG9": "LANGUAGE_9",
+"KC_ERAS": "ALT_ERASE",
+"KC_SYRQ": "SYSREQ",
+"KC_CNCL": "K_CANCEL",
+"KC_CLR": "CLEAR",
+"KC_PRIR": "PRIOR",
+"KC_RETN": "RETURN",
+"KC_SEPR": "SEPARATOR",
+"KC_CLAG": "CLEAR_AGAIN",
+"KC_CRSL": "CRSEL",
+"KC_EXSL": "EXSEL",
+"KC_LCTL": "LEFT_CONTROL",
+"KC_LSFT": "LEFT_SHIFT",
+"KC_LALT": "LEFT_ALT",
+"KC_LOPT": "LEFT_ALT",
+"KC_LGUI": "LEFT_GUI",
+"KC_LCMD": "LEFT_GUI",
+"KC_LWIN": "LEFT_GUI",
+"KC_RCTL": "RIGHT_CONTROL",
+"KC_RSFT": "RIGHT_SHIFT",
+"KC_RALT": "RIGHT_ALT",
+"KC_ROPT": "RIGHT_ALT",
+"KC_ALGR": "RIGHT_ALT",
+"KC_RGUI": "RIGHT_GUI",
+"KC_RCMD": "RIGHT_GUI",
+"KC_RWIN": "RIGHT_GUI",
+"KC_PWR": "C_POWER",
+"KC_SLEP": "C_SLEEP",
+"KC_WAKE": "C_POWER",
+"KC_MUTE": "C_MUTE",
+"KC_VOLU": "C_VOLUME_UP",
+"KC_VOLD": "C_VOLUME_DOWN",
+"KC_MNXT": "C_NEXT",
+"KC_MPRV": "C_PREVIOUS",
+"KC_MSTP": "C_STOP",
+"KC_MPLY": "C_PLAY_PAUSE",
+"KC_MSEL": "F20",
+"KC_EJCT": "C_EJECT",
+"KC_CALC": "C_AL_CALCULATOR",
+"KC_MYCM": "C_AL_MY_COMPUTER",
+"KC_WSCH": "C_AC_SEARCH",
+"KC_WHOM": "C_AC_HOME",
+"KC_WBAK": "C_AC_BACK",
+"KC_WFWD": "C_AC_FORWARD",
+"KC_WSTP": "C_AC_STOP",
+"KC_WREF": "C_AC_REFRESH",
+"KC_WFAV": "C_AC_FAVORITES",
+"KC_MFFD": "C_FAST_FORWARD",
+"KC_MRWD": "C_REWIND",
+"KC_BRIU": "C_BRIGHTNESS_INC",
+"KC_BRID": "C_BRIGHTNESS_DEC",
+"KC_BRIU": "C_BRIGHTNESS_INC",
+"KC_BRID": "C_BRIGHTNESS_DEC",
+"KC_AMPR": "AMPERSAND",
+"KC_ASTR": "ASTERISK",
+"KC_LPRN": "LEFT_PARENTHESIS",
+"KC_RCBR": "RBRC",
+"KC_COLN": "COLON",
+"KC_DLR": "DOLLAR",
+"KC_PERC": "PERCENT",
+"KC_CIRC": "CARET",
+"KC_PLUS": "PLUS",
+"KC_TILD": "TILDE",
+"KC_EXLM": "EXCLAMATION",
+"KC_AT": "AT",
+"KC_HASH": "HASH",
+"KC_PIPE": "PIPE",
+"KC_RPRN": "RIGHT_PARENTHESIS",
+"KC_UNDS": "UNDERSCORE",
+
+// Mod-tap modifiers https://docs.qmk.fm/#/mod_tap?id=mod-tap
+"MOD_LCTL": "LEFT_CONTROL",
+"MOD_LSFT": "LEFT_SHIFT",
+"MOD_LALT": "LEFT_ALT",
+"MOD_LGUI": "LEFT_GUI",
+"MOD_RCTL": "RIGHT_CONTROL",
+"MOD_RSFT": "RIGHT_SHIFT",
+"MOD_RALT": "RIGHT_ALT",
+"MOD_RGUI": "RIGHT_GUI",
+"MOD_HYPR": "LC(LS(LA(LEFT_GUI)))",
+"MOD_MEH": "LC(LS(LEFT_ALT))",
+"QK_REBOOT": "&sys_reset",
+};
+
+const modifierFunctions = {
+  "MOD_LSFT": "LS",
+  "MOD_LCTL": "LC",
+  "MOD_LALT": "LA",
+  "MOD_LGUI": "LG",
+  "MOD_RSFT": "RS",
+  "MOD_RCTL": "RC",
+  "MOD_RALT": "RA",
+  "MOD_RGUI": "RG",
+};
+
+
+let input = document.getElementById('fileUpload');
+      input.addEventListener('change', function() {
+
+        if (this.files && this.files[0]) {
+
+            var myFile = this.files[0];
+            var reader = new FileReader();
+            
+            reader.addEventListener('load', function (e) {
+                
+                let input = document.getElementById("inputText");
+                input.value = e.target.result; 
+            });
+            
+            reader.readAsBinaryString(myFile);
+        }
+      });
+
+// Recursively handle OR keys.
+// Able to handle composite values like "KC_LSFT|KC_RSFT" -> "LS(RIGHT_SHIFT)"
+function parseKeyOperands(operands) {
+  const key = operands[0];
+  if (operands.length === 1) {
+    return basic_key_map[key] ?? 'F20';
+  } else {
+    return `${modifierFunctions[key]}(${parseKeyOperands(operands.slice(1))})`;
+  }
+}
+
+// utility function for the procedural key map
+let parseKey = function (key) {
+  return parseKeyOperands(key.split('|').map(s => s.trim()));
+}
+
+// These are special: when the QMK code starts with any of these, the inputs to the QMK command
+// are parsed and passed in to the function that the QMK code is mapped to.
+// See processKeyInProceduralKeymap
+
+// order these by longest to shortest to prevent partial matches
+let procedural_key_map = {
+  "LCTL_T": (key) => `&mt LEFT_CONTROL ${parseKey(key)}`,
+  "LSFT_T": (key) => `&mt LEFT_SHIFT ${parseKey(key)}`,
+  "LALT_T": (key) => `&mt LEFT_ALT ${parseKey(key)}`,
+  "RALT_T": (key) => `&mt RIGHT_ALT ${parseKey(key)}`,
+  "LGUI_T": (key) => `&mt LEFT_GUI ${parseKey(key)}`,
+  "RCS": (key) => `&kp RC(RS(${parseKey(key)}))`,
+  "LCTL": (key) => `&kp LC(${parseKey(key)})`,
+  "LSFT": (key) => `&kp LS(${parseKey(key)})`,
+  "LALT": (key) => `&kp LA(${parseKey(key)})`,
+  "RALT": (key) => `&kp RA(${parseKey(key)})`,
+  "LSA": (key) => `&kp LS(LA(${parseKey(key)}))`,
+  "RSA": (key) => `&kp RS(LA(${parseKey(key)}))`,
+  "LGUI": (key) => `&kp LG(${parseKey(key)})`,
+  "ANY": (command) => `${parseKey(command)}`,
+  "LT": (layer, key) => `&lt ${layer} ${parseKey(key)}`,
+  "TG": (layer) => `&tog ${layer}`,
+  "TO": (layer) => `&to ${layer}`,
+  "MO": (layer) => `&mo ${layer}`,
+  "MT": (mod, key) => `&mt ${parseKey(mod)} ${parseKey(key)}`,
+  "S": (key) => `&mt LEFT_SHIFT ${parseKey(key)}`,
+}
+
+
+// ****************** JSON PROCESSING ********************************
+let updateKeymap = function() {
+  let input = document.getElementById("inputText");
+  const ignoreMissing = document.getElementById('noop_missing').checked;
+  let inputObject = JSON.parse(input.value);
+
+  // Boilerplate text from the beginning and end of the file
+  let outputPrefix = `
+  /*
+  * Copyright (c) 2020 The ZMK Contributors
+  *
+  * SPDX-License-Identifier: MIT
+  */
+
+  #include <behaviors.dtsi>
+  #include <dt-bindings/zmk/keys.h>
+  #include <dt-bindings/zmk/bt.h>
+  #include <dt-bindings/zmk/ext_power.h>
+
+  #define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+  #define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+
+  #include <dt-bindings/zmk/pointing.h>
+
+  / {
+    keymap {
+      compatible = "zmk,keymap";
+  `;
+
+  let outputSuffix = `
+    };
+  };
+  `;
+
+  // Parse out the inputs to the QMK command and pass them back into the function from
+  // the procedural key map
+  let processKeyInProceduralKeyMap = function (key) {
+    for (let keyMapPrefix in procedural_key_map) {
+      if (key.startsWith(keyMapPrefix)) {
+        let func = procedural_key_map[keyMapPrefix];
+
+        let openParensIndex = key.indexOf("(");
+        let closeParensIndex = key.indexOf(")");
+        let paramsString = key.slice(openParensIndex + 1, closeParensIndex);
+
+        let params = paramsString.split(",");
+        return func(...params);
+      }
+    }
+    return null;
+  }
+
+  let i = 0;
+  let outputText = "";
+  for (let layer of inputObject.layers) {
+
+    // Text that goes around each layer, with an incrementing layer name.
+    let layerPrefix = `layer${i++} {
+          bindings = <
+          `;
+    let layerSuffix = `
+          >;
+        };`;
+
+    let layerText = "";
+
+    let result = null;
+    for (let key of layer) {
+      // separate by space only after the first key
+      if (layerText != "") layerText += " ";
+
+      // if you ever see this console log, it's probably time to add something to one of the key maps
+      if (!(key in basic_key_map) && !(key in special_key_map) && !processKeyInProceduralKeyMap(key)) {
+        console.log(`cannot find "${key}"`);
+      }
+
+      // check if there was a procedural key hit
+      result = processKeyInProceduralKeyMap(key);
+
+      // otherwise...
+      if (!result) {
+        // check if there's a special key hit
+        if (key in special_key_map) {
+          result = special_key_map[key];
+        }
+        // otherwise check if there's a basic key hit
+        else if (key in basic_key_map) {
+          result = `&kp ${basic_key_map[key]}`;
+        }
+      }
+
+      // pass through the QMK command if we didn't get anything.
+      if (!result) {
+        result = ignoreMissing ? '&none' : `[[${key}]]`;
+      }
+      layerText += result;
+    }
+
+    // Add the layer to the output.
+    outputText += "\n" + layerPrefix + layerText + layerSuffix;
+    
+  }
+
+  // Done!
+  document.getElementById("output").value = outputPrefix + outputText + outputSuffix;
+}
+
+updateKeymap();
+</script>
+</html>

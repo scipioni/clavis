@@ -2,7 +2,8 @@
 
 all: zmk-clavis/zephyr/VERSION firmware/clavis_left.uf2
 
-zmk-clavis/zephyr/VERSION: update
+zmk-clavis/zephyr/VERSION:
+	make update
 
 update:
 	docker compose run --rm --workdir=/zmk zmk west update
