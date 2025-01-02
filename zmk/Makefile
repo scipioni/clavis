@@ -1,6 +1,6 @@
-.PHONY: cli clean update
+.PHONY: cli clean update all
 
-all: zmk-clavis/zephyr/VERSION firmware/clavis_left.uf2
+all: zmk-clavis/zephyr/VERSION firmware/clavis_left.uf2 
 
 zmk-clavis/zephyr/VERSION:
 	make update
@@ -11,7 +11,7 @@ update:
 cli:
 	docker compose run --rm --workdir=/zmk zmk bash
 
-firmware/clavis_left.uf2: zmk-clavis/config/corne.h zmk-clavis/config/corne.conf
+firmware/clavis_left.uf2: zmk-clavis/config/corne.h zmk-clavis/config/corne.conf zmk-clavis/config/corne.keymap
 	docker compose run --rm --workdir=/zmk zmk bash -c ./build.sh
 
 clean:
