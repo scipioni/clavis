@@ -10,6 +10,10 @@ Install emacs org mode
 yay -S emacs-org-mode
 ```
 
+Edit miryoku.org
+
+
+Generate zmk files and sync zmk/zmk-clavis/miryoku folder
 ```
 make
 ```

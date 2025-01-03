@@ -1,7 +1,17 @@
 # ZMK clavis
 
+layout is defined in ../ folder with miryoku_babel format
 
-build zmk container with zephyr dependancies
+create firmware
+```bash
+make
 ```
-task setup
+
+
+output
+```bash
+firmware/
+├── clavis_left.uf2
+├── clavis_right.uf2
+└── settings_reset.uf2
 ```
