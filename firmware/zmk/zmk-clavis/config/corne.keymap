@@ -1,4 +1,5 @@
 #define MIRYOKU_ALPHAS_QWERTY
 
+#include "custom_config.h"
 #include "corne.h"
 #include "../miryoku/miryoku.dtsi"
