@@ -35,3 +35,8 @@ Howto:
 - read [PCB](pcb/) to build PCB
 - read [QMK](qmk/) to build firmare
 - check [3d](3d/) for 3d models
+
+## References
+
+- [keyler keyboard](https://github.com/jonathanforking/Keiler) and his [firmware](https://github.com/jonathanforking/Keiler-ZMK)
+- [about sockets](https://github.com/joric/nrfmicro/wiki/Sockets)
