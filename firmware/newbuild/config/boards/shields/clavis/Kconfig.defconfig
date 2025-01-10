@@ -1,0 +1,18 @@
+if SHIELD_CLAVIS_DONGLE
+config ZMK_KEYBOARD_NAME
+    default "clavis"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+    default y
+endif
+
+if SHIELD_CLAVIS_LEFT || SHIELD_CLAVIS_RIGHT || SHIELD_CLAVIS_DONGLE
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+    default y
+endif

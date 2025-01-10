@@ -1,0 +1,14 @@
+file_format: "1"
+id: clavis
+name: clavis
+type: shield
+url: https://github.com/jonathanforking/clavis
+requires: 
+  - pro_micro
+  - seeeduino_xiao_ble
+features:
+  - keys
+siblings:
+  - clavis_left
+  - clavis_right
+  - clavis_dongle
