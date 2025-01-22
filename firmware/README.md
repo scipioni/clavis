@@ -13,7 +13,7 @@ yay -S emacs-org-mode
 Edit miryoku.org
 
 
-Generate zmk files and sync zmk/zmk-clavis/miryoku folder
+Generate zmk files and copy to zmk/miryoku folder
 ```
 make
 ```

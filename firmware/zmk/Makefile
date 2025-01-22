@@ -1,22 +1,17 @@
-.PHONY: cli clean update all
+.PHONY: all clean_firmware clean_image clean
 
-all: zmk-clavis/zephyr/VERSION firmware/clavis_left.uf2 
+all:
+	docker build --tag zmk_keiler --file Dockerfile .
+	docker run --rm -it --name zmk_keiler \
+		-v $(PWD)/firmware:/app/firmware \
+		-v $(PWD)/config:/app/config:ro \
+		-v $(PWD)/miryoku:/app/miryoku:ro \
+		zmk_keiler
 
-zmk-clavis/zephyr/VERSION:
-	make update
+clean_firmware:
+	rm -f firmware/*.uf2
 
-update:
-	docker compose run --rm --workdir=/zmk zmk west update
+clean_image:
+	docker image rm zmk_keiler docker.io/zmkfirmware/zmk-build-arm:stable
 
-cli:
-	docker compose run --rm --workdir=/zmk zmk bash
-
-firmware/clavis_left.uf2: zmk-clavis/config/corne.h zmk-clavis/config/corne.conf zmk-clavis/config/corne.keymap
-	docker compose run --rm --workdir=/zmk zmk bash -c ./build.sh
-
-clean:
-	rm -f firmware/*
-
-raw-keymap:
-	# pip install pcpp
-	pcpp --passthru-unfound-includes zmk-clavis/config/corne.keymap
+clean: clean_firmware clean_image

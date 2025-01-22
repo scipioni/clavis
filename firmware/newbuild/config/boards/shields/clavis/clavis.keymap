@@ -1,5 +1,0 @@
-#define MIRYOKU_ALPHAS_QWERTY
-
-#include "custom_config.h"
-#include "clavis.h"
-#include "./miryoku/miryoku.dtsi"
