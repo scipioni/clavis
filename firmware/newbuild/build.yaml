@@ -14,13 +14,13 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: Keiler_left
+    shield: clavis_left
   - board: nice_nano_v2
-    shield: Keiler_right
-  - board: seeeduino_xiao_ble
-    shield: Keiler_dongle
+    shield: clavis_right
+  #- board: seeeduino_xiao_ble
+  #  shield: clavis_dongle
 
   - board: nice_nano_v2
     shield: settings_reset
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
+  #- board: seeeduino_xiao_ble
+  #  shield: settings_reset
