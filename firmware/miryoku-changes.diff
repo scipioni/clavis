@@ -11,3 +11,17 @@ index c59d354..a179313 100644
  | `    | 1    | 2    | 3    | \    |
  | U_NP | U_NP | DOT  | 0    | MINS |
  
+
+
+diff --git a/firmware/miryoku.org b/firmware/miryoku.org
+index a179313..3258daf 100644
+--- a/firmware/miryoku.org
++++ b/firmware/miryoku.org
+@@ -255,7 +255,7 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and
+ 
+ #+NAME: qwerty
+ | Q    | W    | E    | R    | T    | Y    | U    | I    | O    | P    |
+-| A    | S    | D    | F    | G    | H    | J    | K    | L    | '    |
++| A    | S    | D    | F    | G    | H    | J    | K    | L    | ;    |
+ | Z    | X    | C    | V    | B    | N    | M    | ,    | DOT  | /    |
+ 
