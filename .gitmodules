@@ -1,0 +1,3 @@
+[submodule "pcb/footprints/ceoloide"]
+	path = pcb/footprints/ceoloide
+	url = git@github.com:ceoloide/ergogen-footprints.git
