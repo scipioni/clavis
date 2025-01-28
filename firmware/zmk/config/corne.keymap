@@ -1,4 +1,5 @@
-#define MIRYOKU_ALPHAS_QWERTY
+//#define MIRYOKU_ALPHAS_QWERTY
+#define MIRYOKU_ALPHAS_COLEMAKDH
 
 #include "custom_config.h"
 #include "corne.h"
