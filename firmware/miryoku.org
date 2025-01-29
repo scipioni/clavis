@@ -88,7 +88,7 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ***** Alphas
 
 #+NAME: colemakdh
-| Q     | W     | F     | P     | B     | J     | L     | U     | Y     | '     |
+| Q     | W     | F     | P     | B     | J     | L     | U     | Y     | ;     |
 | A     | R     | S     | T     | G     | M     | N     | E     | I     | O     |
 | Z     | X     | C     | D     | V     | K     | H     | ,     | DOT   | /     |
 
