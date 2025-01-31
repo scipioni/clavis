@@ -276,7 +276,7 @@ pcbs:
           shift: [20, -11]
           rotate: 270
         params:
-          orientation: up
+          orientation: down
           P4: row_top
           P5: row_home
           P6: row_bottom
@@ -294,7 +294,7 @@ pcbs:
           shift: [22.5, -12.25]
           rotate: 270
         params:
-          orientation: down
+          orientation: up
       pad_plus:
         what: pad
         where:
