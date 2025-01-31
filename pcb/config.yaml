@@ -1,7 +1,7 @@
 meta:
-  engine: 4.0.5
+  engine: 4.0.2
   name: clavis
-  version: 0.4
+  version: 1.0
   author: Scipio
   url: https://github.com/scipioni/clavis
 units:
@@ -171,44 +171,44 @@ outlines:
       what: circle
       where:
         - ref: matrix_ring_home
-          shift: [-0.58 kx, 0 ky]
+          shift: [-0.70 kx, 0 ky]
       radius: 1.05
     bottom_left:
       what: circle
       where:
         - ref: matrix_pinky_bottom
-          shift: [0.7 kx, -0.1 ky]
+          shift: [0.8 kx, -0.1 ky]
       radius: 1.05
     top_right:
       what: circle
       where:
         - ref: matrix_inner_top
-          shift: [-0.51 kx, 0]
+          shift: [-0.51 kx, -0.2 ky]
       radius: 1.05
     palm:
       what: circle
       where:
         - ref: matrix_index_bottom
-          shift: [0, -1.06 ky]
+          shift: [0, -1.16 ky]
       radius: 1.05
     thumb:
       what: circle
       where:
         - ref: thumbfan_far_thumb
-          shift: [-0.55 kx, 0]
+          shift: [-0.55 kx, -0.15ky]
       radius: 1.05
   mounting_holes:
     $extends: outlines.screw_holes
     top_left:
-      radius: 2.05
+      radius: 3.05
     bottom_left:
-      radius: 2.05
+      radius: 3.05
     top_right:
-      radius: 2.05
+      radius: 3.05
     palm:
-      radius: 2.05
+      radius: 3.05
     thumb:
-      radius: 2.05
+      radius: 3.05
   bottom_outline:
     - "base_outline"
     # TODO use footprints with pad + via reinforcement as mounting holes
