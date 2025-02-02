@@ -1,7 +1,7 @@
 meta:
   engine: 4.0.5
   name: clavis
-  version: 0.4
+  version: 1.0
   author: Scipio
   url: https://github.com/scipioni/clavis
 units:
@@ -77,13 +77,13 @@ points:
         near:
           key:
             spread: kx
-            splay: -15
-            origin: [-0.5 kx, -0.5 ky]
+            splay: -10
+            origin: [-0.9 kx, -0.5 ky]
             column_net: col_middle
         home:
           key:
             spread: kx
-            splay: -15
+            splay: -10
             origin: [-0.5 kx, -0.5 ky]
             column_net: col_index
         far:
@@ -328,7 +328,7 @@ pcbs:
         where:
           ref:
             - matrix_inner_bottom
-          shift: [32, -15]
+          shift: [32, -13]
           rotate: 270
         params:
           reverse: true
@@ -402,7 +402,7 @@ pcbs:
           shift: [0.85 kx, 0]
           rotate: -12
         params:
-          text: "clavis v0.4 by Scipio"
+          text: "clavis v1.0 by Scipio"
           justify: left
       info_r:
         what: text
@@ -413,5 +413,5 @@ pcbs:
           rotate: -12
         params:
           layer: B.SilkS
-          text: "clavis v0.4 by Scipio"
+          text: "clavis v1.0 by Scipio"
           justify: right mirror

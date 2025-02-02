@@ -2,8 +2,8 @@ module.exports = {
   params: {
     layer: "F.SilkS",
     text: "",
-    h_size: 1,
-    v_size: 1,
+    h_size: 2,
+    v_size: 2,
     thickness: 0.15,
     justify: "",
   },
