@@ -101,6 +101,7 @@ make output/pcbs/board.dsn
 ### step 3: autoroute with freerouting - from DSN -> to ses file
 
 ```
+export PATH="/usr/lib/jvm/java-23-openjdk/bin/:$PATH"
 make output/routed_pcbs/board.ses
 ```
 
@@ -112,7 +113,7 @@ with kicad gui:
 
 - open unrouted pcb: pcbnew output/pcbs/board.kicad_pcb
 - import output/routed_pcbs/board.ses file: Import -> Specctra session
-- check DRC: Inspect -> DRC
+- check DRC: Inspect -> Design Rule Checker
 - ...
 - save output/routed_pcbs/board.kicad_pcb
 

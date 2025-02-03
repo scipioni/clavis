@@ -1,4 +1,4 @@
-FREEROUTING := 1.9.0
+FREEROUTING := 2.0.1
 
 .PHONY: clean gerbers setup show unrouted images release kicad
 .DEFAULT: gerber
