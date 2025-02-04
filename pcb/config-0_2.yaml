@@ -1,7 +1,7 @@
 meta:
   engine: 4.0.5
   name: clavis
-  version: 1.0
+  version: 0.4
   author: Scipio
   url: https://github.com/scipioni/clavis
 units:
@@ -77,13 +77,13 @@ points:
         near:
           key:
             spread: kx
-            splay: -10
-            origin: [-0.9 kx, -0.5 ky]
+            splay: -15
+            origin: [-0.5 kx, -0.5 ky]
             column_net: col_middle
         home:
           key:
             spread: kx
-            splay: -10
+            splay: -15
             origin: [-0.5 kx, -0.5 ky]
             column_net: col_index
         far:
@@ -189,7 +189,7 @@ outlines:
       what: circle
       where:
         - ref: matrix_index_bottom
-          shift: [-0.1 kx, -1.06 ky]
+          shift: [0, -1.06 ky]
       radius: 1.05
     thumb:
       what: circle
@@ -209,13 +209,6 @@ outlines:
       radius: 2.05
     thumb:
       radius: 2.05
-    led:
-      what: circle
-      where:
-        - ref: matrix_inner_bottom
-          shift: [26.8, -10.6]
-      radius: 1.05
-    
   bottom_outline:
     - "base_outline"
     # TODO use footprints with pad + via reinforcement as mounting holes
@@ -335,7 +328,7 @@ pcbs:
         where:
           ref:
             - matrix_inner_bottom
-          shift: [32, -12]
+          shift: [32, -15]
           rotate: 270
         params:
           reverse: true
@@ -409,7 +402,7 @@ pcbs:
           shift: [0.85 kx, 0]
           rotate: -12
         params:
-          text: "Clavis v1.0 by Scipio"
+          text: "clavis v0.4 by Scipio"
           justify: left
       info_r:
         what: text
@@ -420,5 +413,5 @@ pcbs:
           rotate: -12
         params:
           layer: B.SilkS
-          text: "Clavis v1.0 by Scipio"
+          text: "clavis v0.4 by Scipio"
           justify: right mirror

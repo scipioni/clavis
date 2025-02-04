@@ -65,10 +65,11 @@ show: output/routed_pcbs/board-front.png output/routed_pcbs/board-back.png outpu
 bin/freerouting-$(FREEROUTING).jar:
 	mkdir -p bin && cd bin && wget https://github.com/freerouting/freerouting/releases/download/v$(FREEROUTING)/freerouting-$(FREEROUTING).jar 
 
+gerbers-board: output/gerbers/board/gerbers.zip
+
 gerbers: \
 	output/gerbers/top_plate/gerbers.zip \
 	output/gerbers/bottom_plate/gerbers.zip \
-	output/gerbers/board/gerbers.zip
 
 release:
 	zip -qr /tmp/clavis-0.2.zip output

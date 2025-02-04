@@ -124,8 +124,10 @@ or with cli: TODO
 create gerbers in output/gerbers
 
 ```
-make gerbers
+make gerbers-board
 ```
+
+go to https://jlcpcb.com/
 
 ## Convert output dxf to svg
 
