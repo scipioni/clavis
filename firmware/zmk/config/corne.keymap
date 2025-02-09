@@ -1,6 +1,8 @@
 //#define MIRYOKU_ALPHAS_QWERTY
 #define MIRYOKU_ALPHAS_COLEMAKDH
 
+#define MIRYOKU_KLUDGE_MOUSEKEYSPR
+
 #include "custom_config.h"
 #include "corne.h"
 #include "../miryoku/miryoku.dtsi"
