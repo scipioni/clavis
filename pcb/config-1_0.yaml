@@ -1,7 +1,7 @@
 meta:
-  engine: 4.1.0
+  engine: 4.0.5
   name: clavis
-  version: 1.1
+  version: 1.0
   author: Scipio
   url: https://github.com/scipioni/clavis
 units:
@@ -37,8 +37,8 @@ points:
         pinky:
           key:
             splay: 12
-            stagger: 0 ky
-            spread: kx
+            stagger: 0 
+            spread: 0
             column_net: col_pinky
         ring:
           key:
@@ -55,12 +55,12 @@ points:
         index:
           key:
             stagger: -0.2 ky
-            spread: paddingx kx
+            spread: padding kx
             column_net: col_index
         inner:
           key:
             stagger: -0.1 ky
-            spread: paddingx kx
+            spread: padding kx
             column_net: col_inner
       rows:
         bottom:
@@ -78,7 +78,7 @@ points:
           key:
             spread: kx
             splay: -10
-            origin: [-0.7 kx, +0.5 ky]
+            origin: [-0.9 kx, -0.5 ky]
             column_net: col_middle
         home:
           key:
@@ -89,7 +89,7 @@ points:
         far:
           key:
             spread: kx
-            splay: -10
+            splay: -15
             origin: [-0.5 kx, -0.5 ky]
             column_net: col_inner
       rows:
@@ -101,7 +101,7 @@ outlines:
     - what: rectangle
       where: true
       asym: source
-      size: [kx + px + paddingx, ky + py ]
+      size: [kx + px, ky + py]
       corner: px
   thumbfan_glue:
     - what: polygon
@@ -109,9 +109,9 @@ outlines:
         - ref: matrix_inner_bottom
           shift: [0.5 kx + 0.5px, -0.5 ky + 0.5 py]
         - ref: thumbfan_far_thumb
-          shift: [0.54 kx - 0.5px, 0.5 ky + 0.5 py]
+          shift: [0.5 kx - 0.5px, 0.5 ky + 0.5 py]
         - ref: thumbfan_far_thumb
-          shift: [0.54 kx - 0.5px, -0.5 ky - 0.5 py]
+          shift: [0.5 kx - 0.5px, -0.5 ky - 0.5 py]
         - ref: thumbfan_near_thumb
           shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
         - ref: matrix_pinky_bottom
@@ -128,6 +128,7 @@ outlines:
           shift: [-0.5 (kx + px), 0]
         - ref: matrix_pinky_top
           shift: [-0.3 (kx + px), 0.55ky]
+
   patch_inner:
     - what: polygon
       points:
@@ -137,7 +138,7 @@ outlines:
           shift: [0, 0]
         - ref: matrix_middle_bottom
         - ref: matrix_middle_top
-          shift: [0, 0.33(ky+py)]
+          shift: [0, 0.32(ky+py)]
   controller_area:
     - what: rectangle
       where:
@@ -170,7 +171,7 @@ outlines:
       what: circle
       where:
         - ref: matrix_ring_home
-          shift: [-0.6 kx, 0.27 ky]
+          shift: [-0.58 kx, 0 ky]
       radius: 1.05
     bottom_left:
       what: circle
@@ -182,38 +183,39 @@ outlines:
       what: circle
       where:
         - ref: matrix_inner_top
-          shift: [-0.52 kx, 0]
+          shift: [-0.51 kx, 0]
       radius: 1.05
     palm:
       what: circle
       where:
         - ref: matrix_index_bottom
-          shift: [-0.25 kx, -1.06 ky]
+          shift: [-0.1 kx, -1.06 ky]
       radius: 1.05
     thumb:
       what: circle
       where:
         - ref: thumbfan_far_thumb
-          shift: [-0.54 kx, 0]
+          shift: [-0.55 kx, 0]
       radius: 1.05
   mounting_holes:
     $extends: outlines.screw_holes
     top_left:
-      radius: 1.7
+      radius: 2.05
     bottom_left:
-      radius: 1.7
+      radius: 2.05
     top_right:
-      radius: 1.7
+      radius: 2.05
     palm:
-      radius: 1.7
+      radius: 2.05
     thumb:
-      radius: 1.7
+      radius: 2.05
     led:
       what: circle
       where:
         - ref: matrix_inner_bottom
           shift: [26.8, -10.6]
       radius: 1.05
+    
   bottom_outline:
     - "base_outline"
     # TODO use footprints with pad + via reinforcement as mounting holes
@@ -273,23 +275,15 @@ pcbs:
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
-      mcu_r:
-        what: promicro_flippable
-        #what: ceoloide/mcu_supermini_nrf52840
+      mcu_l:
+        what: promicro
         where:
           ref:
             - matrix_inner_top
           shift: [20, -11]
           rotate: 270
-          #rotate: 0
         params:
-          orientation: down # led face away from pcb
-          silk_layer: B.SilkS
-          
-          #reverse_mount: false
-          #side: B
-          #reversible: false
-
+          orientation: up
           P4: row_top
           P5: row_home
           P6: row_bottom
@@ -299,24 +293,15 @@ pcbs:
           P18: col_middle
           P19: col_ring
           P20: col_pinky
-      mcu_l:
-        what: promicro_flippable
-        #what: ceoloide/mcu_supermini_nrf52840
+      mcu_r:
+        what: promicro
         where:
           ref:
             - matrix_inner_top
           shift: [22.5, -12.25]
           rotate: 270
-          #rotate: 0
         params:
-          orientation: up # led face away from pcb
-          silk_layer: F.SilkS
-          
-          #reverse_mount: false
-          #side: F
-          #reversible: false
-          #batteryPins: true # !!!!!!!!
-
+          orientation: down
       pad_plus:
         what: pad
         where:
@@ -424,7 +409,7 @@ pcbs:
           shift: [0.85 kx, 0]
           rotate: -12
         params:
-          text: "Clavis v1.1 by Scipio"
+          text: "Clavis v1.0 by Scipio"
           justify: left
       info_r:
         what: text
@@ -435,5 +420,5 @@ pcbs:
           rotate: -12
         params:
           layer: B.SilkS
-          text: "Clavis v1.1 by Scipio"
+          text: "Clavis v1.0 by Scipio"
           justify: right mirror
