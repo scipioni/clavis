@@ -127,7 +127,7 @@ create gerbers in output/gerbers
 make gerbers-board
 ```
 
-go to https://jlcpcb.com/
+go to https://jlcpcb.com/ and upload output/gerbers/board/gerbers.zip
 
 ## Convert output dxf to svg
 
