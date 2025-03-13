@@ -1,7 +1,7 @@
 meta:
   engine: 4.1.0
   name: clavis
-  version: 1.1
+  version: 1.2
   author: Scipio
   url: https://github.com/scipioni/clavis
 units:
@@ -273,23 +273,17 @@ pcbs:
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
-      mcu_r:
-        what: promicro_flippable
-        #what: ceoloide/mcu_supermini_nrf52840
+      mcu_l:
+        what: mcu_supermini_nrf52840
         where:
           ref:
             - matrix_inner_top
-          shift: [20, -11]
-          rotate: 270
-          #rotate: 0
+          #shift: [20, -11]
+          shift: [21.5, -9.8]
+          rotate: 0
         params:
-          orientation: down # led face away from pcb
-          silk_layer: B.SilkS
-          
-          #reverse_mount: false
-          #side: B
-          #reversible: false
-
+          #side: F
+          reversible: true
           P4: row_top
           P5: row_home
           P6: row_bottom
@@ -299,24 +293,15 @@ pcbs:
           P18: col_middle
           P19: col_ring
           P20: col_pinky
-      mcu_l:
-        what: promicro_flippable
-        #what: ceoloide/mcu_supermini_nrf52840
-        where:
-          ref:
-            - matrix_inner_top
-          shift: [22.5, -12.25]
-          rotate: 270
-          #rotate: 0
-        params:
-          orientation: up # led face away from pcb
-          silk_layer: F.SilkS
-          
-          #reverse_mount: false
-          #side: F
-          #reversible: false
-          #batteryPins: true # !!!!!!!!
-
+      # mcu_r:
+      #   what: mcu_supermini_nrf52840
+      #   where:
+      #     ref:
+      #       - matrix_inner_top
+      #     shift: [22.5, -12.25]
+      #     rotate: 0
+      #   params:
+      #     side: B
       pad_plus:
         what: pad
         where:
@@ -424,7 +409,7 @@ pcbs:
           shift: [0.85 kx, 0]
           rotate: -12
         params:
-          text: "Clavis v1.1 by Scipio"
+          text: "Clavis v1.2 by Scipio"
           justify: left
       info_r:
         what: text
@@ -435,5 +420,5 @@ pcbs:
           rotate: -12
         params:
           layer: B.SilkS
-          text: "Clavis v1.1 by Scipio"
+          text: "Clavis v1.2 by Scipio"
           justify: right mirror

@@ -100,6 +100,8 @@ make output/pcbs/board.dsn
 
 ### step 3: autoroute with freerouting - from DSN -> to ses file
 
+set autorouter algorithm to slow (as in 2.0.1 via GUI only)
+
 ```
 export PATH="/usr/lib/jvm/java-23-openjdk/bin/:$PATH"
 make output/routed_pcbs/board.ses
@@ -134,6 +136,20 @@ go to https://jlcpcb.com/ and upload output/gerbers/board/gerbers.zip
 ```
 https://convertio.co/
 ```
+
+## freerouting build
+
+install jdk21-openjdk
+
+```
+export PATH="/usr/lib/jvm/java-21-openjdk/bin/:$PATH"
+
+git clone --depth 1 https://github.com/freerouting/freerouting.git
+cd freerouting
+./gradlew assemble
+cp build/libs/freerouting-executable.jar ../bin/freerouting-executable.jar
+```
+
 ## TODO
 
 - import Specctra session with scripts/import_ses.py
