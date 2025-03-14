@@ -4,7 +4,7 @@
 
 - [PCB](pcb/README.md)
 - [QMK](firmware/qmk/README.md) firmware with ![Miryoku layout](firmware/qmk/clavis/README.md)
-- [ZMK](firmware/zmk/README.md) bluetooth firmware with ![Miryoku layout]
+- [ZMK](firmware/zmk/README.md) bluetooth firmware with ![Miryoku layout](firmware/zmk/README.md)
 - [3D models](3d/)
 - TODO ZMK firmware
 
