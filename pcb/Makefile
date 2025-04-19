@@ -74,7 +74,3 @@ gerbers: \
 release:
 	zip -qr /tmp/clavis-1-2.zip output
 
-freerouting:
-	cd /tmp && git clone --depth 1 https://github.com/freerouting/freerouting.git && cd freerouting && ./gradlew assemble
-	
-

@@ -131,6 +131,12 @@ make gerbers-board
 
 go to https://jlcpcb.com/ and upload output/gerbers/board/gerbers.zip
 
+create release
+```
+git tag -a v1.2 -m "version 1.2"
+zip -qr /tmp/clavis-1.2.zip output
+```
+
 ## Convert output dxf to svg
 
 ```
