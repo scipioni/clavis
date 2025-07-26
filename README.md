@@ -4,7 +4,7 @@ Clavis is a 5x3 split keyboard with three thumb keys, inspired by the Corne keyb
 
 <div align="center">
 
-| Wireless Version (Rubinia Wood) | Wireless Version (Bambu Wood) |
+| Wireless Version (Robinia Wood) | Wireless Version (Bambu Wood) |
 | :---: | :---: |
 | <img src="images/rubinia.webp" alt="Bluetooth with Rubinia wood" width="400"> | <img src="images/bambu.webp" alt="Bluetooth with Bambu wood" width="400"> |
 
