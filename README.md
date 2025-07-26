@@ -6,33 +6,38 @@
 - [QMK](firmware/qmk/README.md) firmware with ![Miryoku layout](firmware/qmk/clavis/README.md)
 - [ZMK](firmware/zmk/README.md) bluetooth firmware with ![Miryoku layout](firmware/README.md)
 - [3D models](3d/)
-- TODO ZMK firmware
 
 <div align="center">
-    <img src="images/bluetooth.jpg" alt="bluetooth" width="700">
-    <img src="images/recharge.png" width="200">
-    </br>
-    <img src="images/photo.jpg" alt="trrs" width="300">
-    </br>
-    <img src="images/stl-preview.png">
-    </br>
-    <img src="images/board-back.png"/>
-    </br>
-    <img src="images/miryoku.png"/>
+    <img src="images/rubinia.webp" alt="bluetooth with rubinia wood" width="750">
+    <br/>
+    <img src="images/bambu.webp" alt="bluetooth with bambu wood" width="750">
+    <br/>
+    <img src="images/bluetooth.webp" alt="bluetooth with printer 3D" width="750">
+    <br/>
+    <img src="images/recharge2.webp" alt="recharge wireless" width="600">
+    <img src="images/recharge.webp" width="150">
+    <br/>
+    <img src="images/photo.webp" alt="trrs" width="250">
+    <img src="images/stl-preview.webp" width="250">
+    <img src="images/board-back.webp" width="250"/>
+    <br/>
+    <img src="images/cnc.webp" alt="CNC" width="250"/>
+    <br/>
+    <img src="images/miryoku.webp" alt="miryoky layout" width="750"/>
 </div>
 
 A 5x3 split keyboard with 3 thumbs. It's inspired by Corne and
 has the exact number of keys needed for the [miryoku](https://github.com/manna-harbour/miryoku) keyboard layout.
 
-- Wireless bluetooth mode with nice!nano (ZMK firmware) with wireless recharge 
+- Wireless bluetooth mode with nice!nano (ZMK firmware) with wireless recharge
 - Wired mode with TRSS and usb (QMK firwmare)
 - Layout is declared using [ergogen](https://github.com/mrzealot/ergogen/) (https://github.com/soundmonster/ergogen.git fork)
 - The build system uses Ergogen to translate YAML to a KiCad PCB and plate files for FR-4 fab or laser cutting
-- uses [freerouting](https://github.com/freerouting/freerouting) to **automatically route the traces on the PCB**
-- uses pcbdraw to render PCB previews
-- uses [kikit](https://github.com/yaqwsx/KiKit) to render production-ready **Gerber files**
-- miryoku qmk layout in folder [QMK](qmk/), check [README](qmk/README.md)
-- blender model with stl in folder [3d](3d/)
+- Uses [freerouting](https://github.com/freerouting/freerouting) to **automatically route the traces on the PCB**
+- Uses pcbdraw to render PCB previews
+- Uses [kikit](https://github.com/yaqwsx/KiKit) to render production-ready **Gerber files**
+- Miryoku qmk layout in folder [QMK](qmk/), check [README](qmk/README.md)
+- Blender model with stl in folder [3d](3d/)
 
 Howto:
 

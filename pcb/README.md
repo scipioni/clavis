@@ -76,7 +76,7 @@ open kicad pcb
 pcbnew output/pcbs/board.kicad_pcb
 ```
 
-![kicad](images/kicad.png)
+![kicad](../images/kicad.webp)
 
 ## EasyEda routing (method A)
 
