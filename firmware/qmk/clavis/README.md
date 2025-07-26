@@ -1,40 +1,34 @@
-# **Clavis**
+# Clavis QMK Layout
 
-## Corne Keyboard (CRKBD) **Clavis** layout by [scipioni](https://github.com/scipioni)
+This directory contains the QMK keymap for the Clavis keyboard, a 36-key Corne-inspired split keyboard.
 
-- **Minimal hardware**: no led and no oled display.
-- **36 keys** with [Miryoku](https://github.com/manna-harbour/miryoku) layout.
-- **PCB** project [clavis](https://github.com/scipioni/clavis).
-
----
-
-## *Flashing**
-
-For *Pro Micro* execute: `sudo make crkbd:clavis:avrdude`
-
-For *Elite-C* execute: `sudo make crkbd:clavis:dfu`
+*   **Minimal Hardware:** Designed for builds without LEDs or OLED displays.
+*   **36-Key Miryoku Layout:** The keymap is based on the [Miryoku layout](https://github.com/manna-harbour/miryoku).
+*   **PCB Project:** The hardware project can be found at [scipioni/clavis](https://github.com/scipioni/clavis).
 
 ---
 
-## **Layers**
+## Flashing Instructions
 
-### 0
-![layour 0](images/0.png)
+*   **Pro Micro:** `sudo make crkbd:clavis:avrdude`
+*   **Elite-C:** `sudo make crkbd:clavis:dfu`
 
-### 1
-![layour 1](images/1.png)
+---
 
-### 2
-![layour 2](images/2.png)
+## Keymap Layers
 
-### 3
-![layour 3](images/3.png)
+| Layer 0 (Base) | Layer 1 (Symbols) |
+| :---: | :---: |
+| ![Layer 0](images/0.png) | ![Layer 1](images/1.png) |
 
-### 4
-![layour 4](images/4.png)
+| Layer 2 (Navigation) | Layer 3 (Mouse) |
+| :---: | :---: |
+| ![Layer 2](images/2.png) | ![Layer 3](images/3.png) |
 
-### 5
-![layour 5](images/5.png)
+| Layer 4 (Function Keys) | Layer 5 (Numpad) |
+| :---: | :---: |
+| ![Layer 4](images/4.png) | ![Layer 5](images/5.png) |
 
-### 6
-![layour 6](images/6.png)
+| Layer 6 (Settings) |
+| :---: |
+| ![Layer 6](images/6.png) |
