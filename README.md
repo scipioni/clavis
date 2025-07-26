@@ -1,53 +1,53 @@
-# clavis
+# Clavis: A 36-key Split Keyboard
 
-## Split 36 key keyboard
-
-- [PCB](pcb/README.md)
-- [QMK](firmware/qmk/README.md) firmware with ![Miryoku layout](firmware/qmk/clavis/README.md)
-- [ZMK](firmware/zmk/README.md) bluetooth firmware with ![Miryoku layout](firmware/README.md)
-- [3D models](3d/)
+Clavis is a 5x3 split keyboard with three thumb keys, inspired by the Corne keyboard. It's designed with the perfect number of keys for the [Miryoku](https://github.com/manna-harbour/miryoku) layout.
 
 <div align="center">
-    <img src="images/rubinia.webp" alt="bluetooth with rubinia wood" width="750">
-    <br/>
-    <img src="images/bambu.webp" alt="bluetooth with bambu wood" width="750">
-    <br/>
-    <img src="images/bluetooth.webp" alt="bluetooth with printer 3D" width="750">
-    <br/>
-    <img src="images/recharge2.webp" alt="recharge wireless" width="600">
-    <img src="images/recharge.webp" width="150">
-    <br/>
-    <img src="images/photo.webp" alt="trrs" width="250">
-    <img src="images/stl-preview.webp" width="250">
-    <img src="images/board-back.webp" width="250"/>
-    <br/>
-    <img src="images/cnc.webp" alt="CNC" width="250"/>
-    <br/>
-    <img src="images/miryoku.webp" alt="miryoky layout" width="750"/>
+
+| Wireless Version (Rubinia Wood) | Wireless Version (Bambu Wood) |
+| :---: | :---: |
+| <img src="images/rubinia.webp" alt="Bluetooth with Rubinia wood" width="400"> | <img src="images/bambu.webp" alt="Bluetooth with Bambu wood" width="400"> |
+
+| Wireless Internals & Charging | TRRS Version |
+| :---: | :---: |
+| <img src="images/bluetooth.webp" alt="Bluetooth with 3D printed case" width="400"> | <img src="images/photo.webp" alt="TRRS version" width="400"> |
+
+| Wireless Charging | CNC Case |
+| :---: | :---: |
+| <img src="images/recharge2.webp" alt="Wireless charging" width="300"> <img src="images/recharge.webp" width="75"> | <img src="images/cnc.webp" alt="CNC case" width="400"> |
+
+| PCB Preview | STL Preview | Miryoku Layout |
+| :---: | :---: | :---: |
+| <img src="images/board-back.webp" width="250"/> | <img src="images/stl-preview.webp" width="250"> | <img src="images/miryoku.webp" alt="Miryoku layout" width="500"/> |
+
 </div>
 
-A 5x3 split keyboard with 3 thumbs. It's inspired by Corne and
-has the exact number of keys needed for the [miryoku](https://github.com/manna-harbour/miryoku) keyboard layout.
+## Features
 
-- Wireless bluetooth mode with nice!nano (ZMK firmware) with wireless recharge
-- Wired mode with TRSS and usb (QMK firwmare)
-- Layout is declared using [ergogen](https://github.com/mrzealot/ergogen/) (https://github.com/soundmonster/ergogen.git fork)
-- The build system uses Ergogen to translate YAML to a KiCad PCB and plate files for FR-4 fab or laser cutting
-- Uses [freerouting](https://github.com/freerouting/freerouting) to **automatically route the traces on the PCB**
-- Uses pcbdraw to render PCB previews
-- Uses [kikit](https://github.com/yaqwsx/KiKit) to render production-ready **Gerber files**
-- Miryoku qmk layout in folder [QMK](qmk/), check [README](qmk/README.md)
-- Blender model with stl in folder [3d](3d/)
+*   **Wireless Mode:** Bluetooth connectivity using the nice!nano (ZMK firmware) with wireless charging support.
+*   **Wired Mode:** Traditional wired connection via TRRS and USB (QMK firmware).
+*   **Declarative Layout:** The keyboard layout is defined using [Ergogen](https://github.com/mrzealot/ergogen/) (using the [soundmonster fork](https://github.com/soundmonster/ergogen.git)).
+*   **Automated Workflow:** The build system leverages Ergogen to generate KiCad PCB and plate files from YAML descriptions, suitable for FR-4 fabrication or laser cutting.
+*   **Auto-Routing:** Utilizes [freerouting](https://github.com/freerouting/freerouting) to automatically route the PCB traces.
+*   **PCB Previews:** Generates PCB previews using [pcbdraw](https://github.com/yaqwsx/pcbdraw).
+*   **Production-Ready Gerbers:** Creates production-ready Gerber files with [KiKit](https://github.com/yaqwsx/KiKit).
 
-Howto:
+## Project Components
 
-- run `make all` to create python virtualenv and install needed packages
-- activate virtualenv: `source .venv/bin/activate`
-- read [PCB](pcb/) to build PCB
-- read [QMK](qmk/) to build firmare
-- check [3d](3d/) for 3d models
+*   [**PCB**](pcb/README.md): Ergogen-based PCB design and manufacturing files.
+*   [**QMK Firmware**](firmware/qmk/README.md): Firmware for wired operation, featuring the [Miryoku layout](firmware/qmk/clavis/README.md).
+*   [**ZMK Firmware**](firmware/zmk/README.md): Bluetooth firmware with the [Miryoku layout](firmware/README.md).
+*   [**3D Models**](3d/): Blender and STL files for the case.
+
+## Getting Started
+
+1.  **Installation:** Run `make all` to create a Python virtual environment and install the necessary packages.
+2.  **Activate Virtual Environment:** `source .venv/bin/activate`
+3.  **Build the PCB:** Follow the instructions in the [PCB directory](pcb/).
+4.  **Build the Firmware:** Follow the instructions in the [QMK](firmware/qmk/) or [ZMK](firmware/zmk/) directories.
+5.  **3D Print the Case:** Check the [3D directory](3d/) for the 3D models.
 
 ## References
 
-- [keyler keyboard](https://github.com/jonathanforking/Keiler) and his [firmware](https://github.com/jonathanforking/Keiler-ZMK)
-- [about sockets](https://github.com/joric/nrfmicro/wiki/Sockets)
+*   [Keiler Keyboard](https://github.com/jonathanforking/Keiler) and its [firmware](https://github.com/jonathanforking/Keiler-ZMK)
+*   [About Sockets](https://github.com/joric/nrfmicro/wiki/Sockets)

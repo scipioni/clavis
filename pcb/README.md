@@ -1,163 +1,147 @@
 # Clavis PCB
 
-## References
-
-- https://flatfootfox.com/ergogen-part4-footprints-cases/
-- https://github.com/sloba-byte/ergogen_howtos  
+This document outlines the features, bill of materials, and build process for the Clavis PCB.
 
 ## Features
 
-- Extra pins and a slider switch for battery for wireless Promicro clones (nice!nano, etc); the slider can be shorted with a jumper if `CONFIG_ZMK_SLEEP` is preferred.
-- Wired operation with QMK: TRRS footprints are included and routed. The pinout is identical with a five-column Corne sans the RGBLEDs.
-- Reset switches are easily accessible. The footprints used are the same as on the Corne.
+*   **Wireless Ready:** Includes extra pins and a slider switch for a battery, designed for wireless ProMicro clones like the nice!nano. The slider can be shorted with a jumper if using `CONFIG_ZMK_SLEEP` is preferred.
+*   **Wired Compatibility:** Supports wired operation with QMK. TRRS footprints are included and routed, with a pinout identical to a five-column Corne (excluding RGB LEDs).
+*   **Accessible Reset Switches:** The reset switches are easy to access, using the same footprint as the Corne keyboard.
 
-## Bill of materials
+## Bill of Materials
 
-### both versions
+### Common Components (for both versions)
 
+*   36x [Kailh Choc Low-Profile Hot-Swap Sockets](https://www.aliexpress.com/item/32901654130.html)
+*   36x [Kailh Choc Low-Profile Switches](https://www.aliexpress.com/item/32838369089.html)
+*   34x [MBK Choc Low-Profile 1U Keycaps](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?c=16)
+*   2x [MBK Choc Low-Profile 1U Homing Keycaps](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?number=KC10130_1U-H-WH&c=16)
+*   36x [1N4148 SOD-123 Diodes](https://www.aliexpress.com/item/1005005742644313.html)
+*   2x [Micro Switch Push Buttons](https://www.aliexpress.com/item/1068908059.html)
 
-- [Kailh hot swapping pcb sockets for choc kailh low profile](https://www.aliexpress.com/item/32901654130.html?spm=a2g0o.order_list.order_list_main.41.57841802uASasS) x 36
-- [kailh low profile choc switch](https://www.aliexpress.com/item/32838369089.html?spm=a2g0o.order_list.order_list_main.58.57841802uASasS) x 36
-- [MBK Choc Low Profile Keycaps 1U](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?c=16) x 34
-- [MBK Choc Low Profile Keycaps 1U homing](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?number=KC10130_1U-H-WH&c=16) x 2
-- [diode 1N4148 SOD-123]() x 36
-- [micro switch push button ](https://www.aliexpress.com/item/1068908059.html?spm=a2g0o.order_list.order_list_main.209.57841802uASasSs) x 2
+### TRRS Version Components
 
-### TRSS version
+*   1x [TRRS Audio Cable](https://www.aliexpress.com/item/1005003613205582.html)
+*   2x [TRRS Jacks](https://www.aliexpress.com/item/33029465106.html)
+*   [Pin Connectors for Microcontroller](https://www.aliexpress.com/item/4000379224241.html)
+*   [Pro Micro ATMEGA32U4](https://www.aliexpress.com/item/32888212119.html)
 
-- [TRRS audio cable](https://www.aliexpress.com/item/1005003613205582.html?spm=a2g0o.order_list.order_list_main.11.57841802uASasS)
-- [TRRS jack](https://www.aliexpress.com/item/33029465106.html?spm=a2g0o.order_list.order_list_main.35.57841802uASasS) x 2
-- [pin connector for micro](https://www.aliexpress.com/item/4000379224241.html?spm=a2g0o.order_list.order_list_main.17.57841802uASasS) 
-- [Pro Micro ATMEGA32U4](https://www.aliexpress.com/item/32888212119.html?spm=a2g0o.order_list.order_list_main.23.57841802uASasS) 
+### Bluetooth Version Components
 
-### bluetooth
+*   [Pin Connectors for Microcontroller](https://www.aliexpress.com/item/1005005742644313.html)
+*   [NRF52840 Supermini (nice!nano V2.0 compatible)](https://www.aliexpress.com/item/1005006343285322.html)
 
-- [other pin connector for micro](https://www.aliexpress.com/item/1005005742644313.html?spm=a2g0o.order_list.order_list_main.11.4fb95e5bcPfOfl)
-- [NRF52840 Supermini (compatible with Nice!Nano V2.0)](https://www.aliexpress.com/item/1005006343285322.html)
+## Build Process
 
-## How to
+### Prerequisites
 
-- prereq:
-  - nodejs
-  - kicad 8
-  - java >= 11 (for method B: freerouting)
+*   Node.js
+*   KiCad 8
+*   Java >= 11 (for freerouting)
 
-## Layout
+### 1. Layout Configuration
 
-Edit config.yaml and check on
+Edit `config.yaml` to define your desired layout. You can use the [online Ergogen tool](https://ergogen.cache.works/) to visualize your changes.
 
-- https://ergogen.cache.works/
+### 2. Generate KiCad PCB
 
+This step uses Ergogen to convert your `config.yaml` into KiCad PCB files.
 
-## Introspection
-
-Input file of entire process is config.yaml in ergogen format.
-
-### step 1: ergogen - from yaml -> to kicad pcb
-
-```
-# make clean
+```bash
+# Clean previous builds
+make clean
+# Generate KiCad files
 make kicad
 ```
 
-output: kicad pcb
+This will generate the following files in the `output/pcbs/` directory:
+* `board.kicad_pcb`
+* `bottom_plate.kicad_pcb`
+* `top_plate.kicad_pcb`
 
-```
-output/pcbs/
-├── board.kicad_pcb
-├── bottom_plate.kicad_pcb
-└── top_plate.kicad_pcb
-output/outlines/*
-```
-
-open kicad pcb
-
-```
+You can open the PCB in KiCad to inspect it:
+```bash
 pcbnew output/pcbs/board.kicad_pcb
 ```
 
-![kicad](../images/kicad.webp)
+![KiCad](../images/kicad.webp)
 
-## EasyEda routing (method A)
+### 3. Routing
 
-### step 2: import kicad in easyeda
+You can choose one of the following methods to route the PCB traces.
 
-import kicad project: File -> Open -> Kicad -> output/kicad.zip 
+#### Method A: EasyEDA Routing
 
-## Freerouting routing (method B)
+1.  **Export to EasyEDA:** Zip the `output` directory.
+2.  **Import to EasyEDA:** In EasyEDA, go to `File -> Open -> KiCad` and upload the zip file.
 
-### step 2: kicad - from kicad pcb -> to specctra DSN
+#### Method B: Freerouting
 
-with kicad gui:
+1.  **Export to Specctra DSN:**
+    *   **GUI:** In KiCad, open the board and go to `File -> Export... -> Specctra DSN`.
+    *   **CLI:**
+        ```bash
+        make output/pcbs/board.dsn
+        ```
 
-- Export the PCB into Specctra DSN (File / Export... / Specctra DSN).
+2.  **Autoroute with Freerouting:**
+    *   Set the autorouter algorithm to "slow" (in Freerouting 2.0.1, this can only be done via the GUI).
+    *   Run the autorouter:
+        ```bash
+        export PATH="/usr/lib/jvm/java-23-openjdk/bin/:$PATH"
+        make output/routed_pcbs/board.ses
+        ```
+    *   If the process seems to be stuck in a loop, click with the left mouse button.
 
-or with cli:
+3.  **Import Routed Session into KiCad:**
+    *   **GUI:**
+        1.  Open the unrouted PCB: `pcbnew output/pcbs/board.kicad_pcb`
+        2.  Import the routed session: `Import -> Specctra session` and select `output/routed_pcbs/board.ses`.
+        3.  Run the Design Rule Checker: `Inspect -> Design Rule Checker`.
+        4.  Save the routed PCB to `output/routed_pcbs/board.kicad_pcb`.
+    *   **CLI:** (TODO)
 
-```
-make output/pcbs/board.dsn
-```
+### 4. Generate Gerbers
 
-### step 3: autoroute with freerouting - from DSN -> to ses file
+This step uses KiKit to create the Gerber files for manufacturing.
 
-set autorouter algorithm to slow (as in 2.0.1 via GUI only)
-
-```
-export PATH="/usr/lib/jvm/java-23-openjdk/bin/:$PATH"
-make output/routed_pcbs/board.ses
-```
-
-click with left mouse if loop
-
-### step 4: kicad - merge routed session
-
-with kicad gui:
-
-- open unrouted pcb: pcbnew output/pcbs/board.kicad_pcb
-- import output/routed_pcbs/board.ses file: Import -> Specctra session
-- check DRC: Inspect -> Design Rule Checker
-- ...
-- save output/routed_pcbs/board.kicad_pcb
-
-or with cli: TODO
-
-## step 5: kikit - create gerbers
-
-create gerbers in output/gerbers
-
-```
+```bash
 make gerbers-board
 ```
 
-go to https://jlcpcb.com/ and upload output/gerbers/board/gerbers.zip
+This will create a `gerbers.zip` file in `output/gerbers/board/`. You can upload this file to a PCB manufacturer like [JLCPCB](https://jlcpcb.com/).
 
-create release
-```
+### 5. Create a Release
+
+```bash
 git tag -a v1.2 -m "version 1.2"
 zip -qr /tmp/clavis-1.2.zip output
 ```
 
-## Convert output dxf to svg
+## Miscellaneous
 
-```
-https://convertio.co/
-```
+### DXF to SVG Conversion
 
-## freerouting build
+You can use an online tool like [Convertio](https://convertio.co/) to convert DXF files to SVG.
 
-install jdk21-openjdk
+### Building Freerouting from Source
 
-```
-export PATH="/usr/lib/jvm/java-21-openjdk/bin/:$PATH"
-
-git clone --depth 1 https://github.com/freerouting/freerouting.git
-cd freerouting
-./gradlew assemble
-cp build/libs/freerouting-executable.jar ../bin/freerouting-executable.jar
-```
+1.  Install OpenJDK 21.
+2.  Clone the repository and build the executable:
+    ```bash
+    export PATH="/usr/lib/jvm/java-21-openjdk/bin/:$PATH"
+    git clone --depth 1 https://github.com/freerouting/freerouting.git
+    cd freerouting
+    ./gradlew assemble
+    cp build/libs/freerouting-executable.jar ../bin/freerouting-executable.jar
+    ```
 
 ## TODO
 
-- import Specctra session with scripts/import_ses.py
-- fix pcbdraw of images/board-front.png
--
+*   Implement a script to import the Specctra session (`scripts/import_ses.py`).
+*   Fix the `pcbdraw` rendering of `images/board-front.png`.
+
+## References
+
+*   [Ergogen Part 4: Footprints & Cases](https://flatfootfox.com/ergogen-part4-footprints-cases/)
+*   [Ergogen HOWTOs](https://github.com/sloba-byte/ergogen_howtos)
