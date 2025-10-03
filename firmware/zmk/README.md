@@ -20,6 +20,14 @@ The default value is 200ms. A lower value (e.g., 150ms) makes it easier to regis
 
 Current value: 150ms (overridden in `config/custom_config.h`)
 
+### CONFIG_ZMK_KEYBOARD_NAME
+
+The `CONFIG_ZMK_KEYBOARD_NAME` parameter sets the Bluetooth name of the device. This is the name that appears when pairing the keyboard via Bluetooth.
+
+To customize it, edit the value in `config/corne.conf`.
+
+Current value: "clavis"
+
 ## Building the Firmware
 
 To build the firmware, run the following command:
