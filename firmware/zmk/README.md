@@ -10,7 +10,7 @@ The firmware allows customization of various parameters to suit your typing pref
 
 ### U_TAPPING_TERM
 
-The `U_TAPPING_TERM` parameter controls the time window (in milliseconds) within which a key must be released to register as a tap rather than a hold. This affects all hold-tap behaviors such as:
+The `U_TAPPING_TERM` (zmk tapping-term-ms) parameter controls the time window (in milliseconds) within which a key must be released to register as a tap rather than a hold. This affects all hold-tap behaviors such as:
 
 - Mod-taps (e.g., `&mt` for modifier + key combinations)
 - Layer-taps (e.g., `&lt` for switching to a layer when held, sending a key when tapped)
