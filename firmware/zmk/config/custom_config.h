@@ -1,3 +1,4 @@
+#define U_TAPPING_TERM 150
 
 #define MIRYOKU_LAYER_MEDIA \
 U_NA,          &kp KP_N7,       &kp KP_N8,       &kp KP_N9,      &kp KP_MINUS,      U_RGB_TOG,         U_RGB_EFF,         U_RGB_HUI,         U_RGB_SAI,         U_RGB_BRI,         \

@@ -4,6 +4,22 @@ This document provides instructions for building the ZMK firmware for the Clavis
 
 The keyboard layout is defined in the parent directory (`../`) using the Miryoku Babel format.
 
+## Customizing Parameters
+
+The firmware allows customization of various parameters to suit your typing preferences. To customize these parameters, edit the `config/custom_config.h` file.
+
+### U_TAPPING_TERM
+
+The `U_TAPPING_TERM` parameter controls the time window (in milliseconds) within which a key must be released to register as a tap rather than a hold. This affects all hold-tap behaviors such as:
+
+- Mod-taps (e.g., `&mt` for modifier + key combinations)
+- Layer-taps (e.g., `&lt` for switching to a layer when held, sending a key when tapped)
+- Other hold-tap behaviors in the layout
+
+The default value is 200ms. A lower value (e.g., 150ms) makes it easier to register taps but requires more precise timing to activate the hold function. A higher value gives more time to decide between tap and hold but can introduce slight delays in hold activation.
+
+Current value: 150ms (overridden in `config/custom_config.h`)
+
 ## Building the Firmware
 
 To build the firmware, run the following command:

@@ -144,7 +144,7 @@
 
 / { behaviors { u_caps_word: u_caps_word { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&caps_word>, <&kp CAPS>; mods = <(MOD_LSFT|MOD_RSFT)>; }; }; };
 #line 18 "/lab/clavis/zmk/zmk-clavis/miryoku/miryoku_double_tap_guard.dtsi"
-/ { behaviors { u_to_U_BASE: u_to_U_BASE { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 0>; }; }; }; / { behaviors { u_to_U_EXTRA: u_to_U_EXTRA { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 1>; }; }; }; / { behaviors { u_to_U_TAP: u_to_U_TAP { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 2>; }; }; }; / { behaviors { u_to_U_BUTTON: u_to_U_BUTTON { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 3>; }; }; }; / { behaviors { u_to_U_NAV: u_to_U_NAV { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 4>; }; }; }; / { behaviors { u_to_U_MOUSE: u_to_U_MOUSE { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 5>; }; }; }; / { behaviors { u_to_U_MEDIA: u_to_U_MEDIA { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 6>; }; }; }; / { behaviors { u_to_U_NUM: u_to_U_NUM { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 7>; }; }; }; / { behaviors { u_to_U_SYM: u_to_U_SYM { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 8>; }; }; }; / { behaviors { u_to_U_FUN: u_to_U_FUN { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&none>, <&to 9>; }; }; };
+/ { behaviors { u_to_U_BASE: u_to_U_BASE { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 0>; }; }; }; / { behaviors { u_to_U_EXTRA: u_to_U_EXTRA { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 1>; }; }; }; / { behaviors { u_to_U_TAP: u_to_U_TAP { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 2>; }; }; }; / { behaviors { u_to_U_BUTTON: u_to_U_BUTTON { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 3>; }; }; }; / { behaviors { u_to_U_NAV: u_to_U_NAV { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 4>; }; }; }; / { behaviors { u_to_U_MOUSE: u_to_U_MOUSE { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 5>; }; }; }; / { behaviors { u_to_U_MEDIA: u_to_U_MEDIA { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 6>; }; }; }; / { behaviors { u_to_U_NUM: u_to_U_NUM { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 7>; }; }; }; / { behaviors { u_to_U_SYM: u_to_U_SYM { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 8>; }; }; }; / { behaviors { u_to_U_FUN: u_to_U_FUN { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <U_TAPPING_TERM>; bindings = <&none>, <&to 9>; }; }; };
 #line 4 "/lab/clavis/zmk/zmk-clavis/miryoku/miryoku_mousekeys.dtsi"
 / { macros { u_macro_btn1: u_macro_btn1 { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <0>; bindings = <&kp KP_SLASH &kp KP_N5>; }; }; };
 / { macros { u_macro_btn2: u_macro_btn2 { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <0>; bindings = <&kp KP_MINUS &kp KP_N5>; }; }; };
@@ -155,14 +155,14 @@
     u_mt: u_mt {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      tapping-term-ms = <200>;
+      tapping-term-ms = <U_TAPPING_TERM>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
     u_lt: u_lt {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      tapping-term-ms = <200>;
+      tapping-term-ms = <U_TAPPING_TERM>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };
