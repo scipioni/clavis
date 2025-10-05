@@ -1,0 +1,38 @@
+  1. Applied Hold-Tap Parameter Optimizations
+   - Updated miryoku_behaviors.dtsi with optimized parameters as recommended:
+     - Set flavor = "balanced" for HRMs with positional triggers
+     - Increased tapping-term-ms to 280ms for HRMs (and 175ms for layer taps)
+     - Added quick-tap-ms = <175> for utility key repetition
+     - Set require-prior-idle-ms = <200> for typing streak enforcement
+     - Implemented positional logic with hold-trigger-key-positions for bilateral chording
+     - Enabled hold-trigger-on-release for reliable same-hand modifier combinations
+
+  2. Enhanced Home Row Mod (HRM) Configuration
+   - Left HRMs now trigger hold only when keys on the right side are pressed (and vice versa)
+   - Right HRMs configured with opposite positional triggers for cross-hand chording
+   - Added positional hold-tap configurations for layer-tap keys as well
+
+  3. Updated Custom Configuration
+   - Modified custom_config.h to use the optimized positional HRM configuration (U_MTL/U_MTR macros)
+   - Updated U_TAPPING_TERM to 175ms for non-HRM dual-role keys
+   - Commented out the legacy non-positional HRM configuration
+
+  4. Applied Kconfig Debounce Settings
+   - Added optimized debounce settings in corne.conf:
+     - CONFIG_ZMK_KSCAN_DEBOUNCE_PRESS_MS=5
+     - CONFIG_ZMK_KSCAN_DEBOUNCE_RELEASE_MS=5
+
+  5. Successfully Built Firmware
+   - Both left and right Corne firmware built successfully
+   - Generated new UF2 files with timestamp 202510050602
+   - Settings reset firmware also generated
+
+  Key Improvements Implemented:
+   1. "Timeless" HRM Paradigm: Decoupled tap latency from timing constraints using event-driven resolution
+   2. Bilateral Enforcement: Cross-hand modifiers trigger instantly while preventing same-hand chording
+   3. Typing Streak Protection: require-prior-idle-ms ensures instant tap resolution during active typing
+   4. Chord Management: hold-trigger-on-release enables complex same-hand modifier combinations
+
+  The firmware now implements the "Timeless" HRM philosophy with event-driven, context-aware resolution that eliminates the need for "mind
+  timers" while providing reliable modifier activation for intentional cross-hand chording.
+

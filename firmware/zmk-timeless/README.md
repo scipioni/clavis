@@ -6,7 +6,11 @@ The keyboard layout is defined in the parent directory (`../`) using the Miryoku
 
 ## Customizing Parameters
 
-The firmware allows customization of various parameters to suit your typing preferences. To customize these parameters, edit the `config/custom_config.h` file.
+The firmware allows customization of various parameters to suit your typing preferences. To customize these parameters, edit the `config/custom_config.h` and `config/corne.conf` file.
+
+### Keyboard name
+
+Customize the keyboard name that appears when pairing via Bluetooth in `config/corne.conf`
 
 ### U_TAPPING_TERM
 
@@ -40,14 +44,14 @@ make
 
 The build process will generate the following files in the `firmware/` directory:
 
-*   `clavis_left.uf2`: Firmware for the left half of the keyboard.
-*   `clavis_right.uf2`: Firmware for the right half of the keyboard.
-*   `settings_reset.uf2`: Firmware to reset the keyboard's settings.
-
+- `clavis_left.uf2`: Firmware for the left half of the keyboard.
+- `clavis_right.uf2`: Firmware for the right half of the keyboard.
+- `settings_reset.uf2`: Firmware to reset the keyboard's settings.
 
 ## Introspection
 
 create keymap from current corne.keymap
+
 ```
 uv pip install pcpp
 pcpp --passthru-unfound-includes config/corne.keymap > /tmp/pcpp.keymap

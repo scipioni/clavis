@@ -1,0 +1,110 @@
+// Copyright 2022 Manna Harbour
+// https://github.com/manna-harbour/miryoku
+
+/ {
+    #define LEFT_HAND_KEYS  0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
+    #define RIGHT_HAND_KEYS 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
+
+    #define LEFT_THUMB_KEYS  32 33 34
+    #define RIGHT_THUMB_KEYS 35 36 37 
+};
+
+/ {
+  behaviors {
+    // Left Home Row Mod (HRM) - Optimized for Miryoku using tuning guide recommendations
+    hrm_l: home_row_mod_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      // Use "balanced" for cross-hand chording when positional triggers are used
+      flavor = "balanced";
+      // Long tapping-term to allow event-driven triggers to supersede timing
+      tapping-term-ms = <280>;
+      // Enable quick tap for utility functions on mod layers
+      quick-tap-ms = <175>;
+      // Critical for typing streak enforcement - instant tap resolution during active typing
+      require-prior-idle-ms = <200>;
+      // Hold is triggered immediately if the next key pressed is on the opposite hand
+      // We want the hold (modifier) to trigger if we press a key on the RIGHT side
+      hold-trigger-key-positions = <RIGHT_HAND_KEYS RIGHT_THUMB_KEYS>;
+      
+      // Delay hold resolution until interrupting key is released - essential for same-hand modifier combos
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>; 
+    };
+    hrm_r: home_row_mod_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      // Use "balanced" for cross-hand chording when positional triggers are used
+      flavor = "balanced";
+      // Long tapping-term to allow event-driven triggers to supersede timing
+      tapping-term-ms = <280>;
+      // Enable quick tap for utility functions on mod layers
+      quick-tap-ms = <175>;
+      // Critical for typing streak enforcement - instant tap resolution during active typing
+      require-prior-idle-ms = <200>;
+      // We want the hold (modifier) to trigger if we press a key on the LEFT side
+      hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS>;
+
+      // Delay hold resolution until interrupting key is released - essential for same-hand modifier combos
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>;
+    };
+    // Standard mod-tap behavior for non-HRM keys - optimized with tuning guide recommendations
+    u_mt: u_mt {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      // Use "balanced" flavor for good HRM experience when not using positional triggers
+      flavor = "balanced";
+      // Long tapping-term to allow event-driven triggers to supersede timing
+      tapping-term-ms = <280>;
+      // Enable quick tap for key repetition scenarios
+      quick-tap-ms = <175>;
+      // Moderate idle requirement to reduce misfires during typing
+      require-prior-idle-ms = <100>;
+      bindings = <&kp>, <&kp>;
+    };
+    // Left Layer-Tap with positional logic for thumb keys
+    lm_l: layer_mod_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      // Use "balanced" for permissive layer entry
+      flavor = "balanced";
+      // Moderate tapping-term for layer access (not as critical as HRMs)
+      tapping-term-ms = <175>;
+      // Moderate idle requirement
+      require-prior-idle-ms = <75>;
+      // Use positional triggers for layer taps too
+      hold-trigger-key-positions = <RIGHT_HAND_KEYS RIGHT_THUMB_KEYS>;
+      // Enable for complex layer+modifier combinations
+      hold-trigger-on-release;
+      bindings = <&mo>, <&kp>; 
+    };
+    lm_r: layer_mod_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      // Use "balanced" for permissive layer entry
+      flavor = "balanced";
+      // Moderate tapping-term for layer access (not as critical as HRMs)
+      tapping-term-ms = <175>;
+      // Moderate idle requirement
+      require-prior-idle-ms = <75>;
+      // Use positional triggers for layer taps too
+      hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS>;
+      // Enable for complex layer+modifier combinations
+      hold-trigger-on-release;
+      bindings = <&mo>, <&kp>;
+    };
+    // Standard layer-tap behavior for non-thumb keys - optimized
+    u_lt: u_lt {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      // Use "balanced" for permissive layer entry
+      flavor = "balanced";
+      // Moderate tapping-term for layer access
+      tapping-term-ms = <175>;
+      // Moderate idle requirement
+      require-prior-idle-ms = <75>;
+      bindings = <&mo>, <&kp>;
+    };
+  };
+};
