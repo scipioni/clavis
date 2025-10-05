@@ -15,7 +15,8 @@
     hrm_l: home_row_mod_left {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced"; // Recommended flavor for HRMs
+      //flavor = "balanced"; // Recommended flavor for HRMs
+      flavor = "tap-preferred";
       tapping-term-ms = <U_TAPPING_TERM>;
       // Hold is triggered immediately if the next key pressed is in the list
       // We want the hold (modifier) to trigger if we press a key on the RIGHT side
@@ -28,7 +29,8 @@
     hrm_r: home_row_mod_right {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced"; 
+      //flavor = "balanced"; 
+      flavor = "tap-preferred";
       tapping-term-ms = <U_TAPPING_TERM>;
       // We want the hold (modifier) to trigger if we press a key on the LEFT side
       hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS>;
@@ -40,7 +42,8 @@
     u_mt: u_mt {
       compatible = "zmk,behavior-hold-tap";
       // Use balanced flavor for good HRM experience
-      flavor = "balanced";
+      //flavor = "balanced";
+      flavor = "tap-preferred";
       //flavor = "tap-preferred";
       #binding-cells = <2>;
       tapping-term-ms = <U_TAPPING_TERM>;
@@ -49,7 +52,8 @@
     lm_l: layer_mod_left {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced"; // Recommended flavor for HRMs
+      //flavor = "balanced"; // Recommended flavor for HRMs
+      flavor = "tap-preferred";
       tapping-term-ms = <U_TAPPING_TERM>;
       hold-trigger-key-positions = <RIGHT_HAND_KEYS RIGHT_THUMB_KEYS>;
       hold-trigger-on-release;
@@ -58,7 +62,8 @@
     lm_r: layer_mod_right {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced"; 
+      //flavor = "balanced";
+      flavor = "tap-preferred";
       tapping-term-ms = <U_TAPPING_TERM>;
       hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS>;
       hold-trigger-on-release;
