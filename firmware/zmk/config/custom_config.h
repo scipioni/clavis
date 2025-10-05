@@ -4,7 +4,7 @@
 #pragma once
 
 // Tapping term for hold-tap behaviors
-#define U_TAPPING_TERM 200
+#define U_TAPPING_TERM 175
 
 // Custom layer definitions
 // These override the default Miryoku layers
