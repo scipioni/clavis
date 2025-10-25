@@ -46,6 +46,8 @@ MIRYOKU_LAYER_LIST
 
 #if defined (MIRYOKU_KLUDGE_TAPDELAY)
   #include "miryoku_kludge_tapdelay.dtsi"
+#elif defined (MIRYOKU_OPTIMIZED_BEHAVIORS)
+  #include "miryoku_optimized_behaviors.dtsi"
 #else
   #include "miryoku_behaviors.dtsi"
 #endif

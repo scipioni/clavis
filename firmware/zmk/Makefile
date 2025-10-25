@@ -2,7 +2,7 @@
 
 all:
 	docker build --tag zmk_keiler --file Dockerfile .
-	docker run --rm -it --name zmk_keiler \
+	docker run --rm --name zmk_keiler \
 		-v $(PWD)/firmware:/app/firmware \
 		-v $(PWD)/config:/app/config:ro \
 		-v $(PWD)/miryoku:/app/miryoku:ro \

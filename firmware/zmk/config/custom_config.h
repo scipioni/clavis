@@ -1,27 +1,27 @@
 // Custom configuration for ZMK firmware with Miryoku layout
 // https://github.com/manna-harbour/miryoku
+// Optimized for medium-speed typing with balanced reliability and responsiveness
 
 #pragma once
 
-// Tapping term for hold-tap behaviors
-#define U_TAPPING_TERM 175
+// Enable optimized behaviors
+#define MIRYOKU_OPTIMIZED_BEHAVIORS
+
+// Include optimized behaviors
+#include "../miryoku/miryoku_optimized_behaviors.h"
+
+// Tapping term for legacy behaviors (not used with optimized behaviors)
+#define U_TAPPING_TERM 200
 
 // Custom layer definitions
-// These override the default Miryoku layers
+// These override the default Miryoku layers with optimized behaviors
 
-// MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH
+// MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH - Optimized Version
 #define MIRYOKU_LAYER_BASE \
 &kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             &kp SEMI,          \
-U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),    &kp G,             &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),     U_MT(LGUI, O),     \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
-U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPACE),U_LT(U_MOUSE, TAB),U_LT(U_SYM, RET),  U_LT(U_NUM, BSPC), U_LT(U_FUN, DEL),  U_NP,              U_NP
-
-// with hold-trigger-key-positions
-// #define MIRYOKU_LAYER_BASE \
-// &kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             &kp SEMI,          \
-// U_MTL(LGUI, A),     U_MTL(LALT, R),     U_MTL(LCTRL, S),    U_MTL(LSHFT, T),    &kp G,             &kp M,             U_MTR(LSHFT, N),    U_MTR(LCTRL, E),    U_MTR(LALT, I),     U_MTR(LGUI, O),     \
-// U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
-// U_NP,              U_NP,              U_LTL(U_MEDIA, ESC),U_LTL(U_NAV, SPACE),U_LTL(U_MOUSE, TAB),U_LTR(U_SYM, RET),  U_LTR(U_NUM, BSPC), U_LTR(U_FUN, DEL),  U_NP,              U_NP
+U_HML(LGUI, A),    U_HML(LALT, R),    U_HML(LCTRL, S),   U_HML(LSHFT, T),   &kp G,             &kp M,             U_HMR(LSHFT, N),   U_HMR(LCTRL, E),   U_HMR(LALT, I),    U_HMR(LGUI, O),    \
+U_LAYER(U_BUTTON, Z), U_MTS(RALT, X), &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_MTS(RALT, DOT),  U_LAYER(U_BUTTON, SLASH),\
+U_NP,              U_NP,              U_LAYER(U_MEDIA, ESC),U_LAYER(U_NAV, SPACE),U_LAYER(U_MOUSE, TAB),U_LAYER(U_SYM, RET),  U_LAYER(U_NUM, BSPC), U_LAYER(U_FUN, DEL),  U_NP,              U_NP
 
 
 // Media layer with numpad and media controls
