@@ -45,6 +45,30 @@ The build process will generate the following files in the `firmware/` directory
 *   `settings_reset.uf2`: Firmware to reset the keyboard's settings.
 
 
+## Bluetooth pairing
+
+on keyboard reset bluetooth profile (0,1,2,3), for examble 0:
+- press and hold U_MEDIA (thumb on left), then SHIFT and hold (j key) and then u_bt_sel_0 (h key)
+
+on linux
+```
+bluetootctl
+
+# find clavis mac
+scan on
+devices
+--> Device D4:7E:55:3B:A2:96 clavis
+
+# first trust mac, then pair mac
+trust D4:7E:55:3B:A2:96
+pair D4:7E:55:3B:A2:96
+
+```
+
+now change profile between PC, laptop, phone with:
+- press and hold U_MEDIA (thumb on left) and then u_bt_sel_1 (, key) or u_bt_sel_0 (h key)
+
+
 ## Introspection
 
 create keymap from current corne.keymap
