@@ -12,24 +12,31 @@ This document outlines the features, bill of materials, and build process for th
 
 ### Common Components (for both versions)
 
-*   36x [Kailh Choc Low-Profile Hot-Swap Sockets](https://www.aliexpress.com/item/32901654130.html)
-*   36x [Kailh Choc Low-Profile Switches](https://www.aliexpress.com/item/32838369089.html)
-*   34x [MBK Choc Low-Profile 1U Keycaps](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?c=16)
-*   2x [MBK Choc Low-Profile 1U Homing Keycaps](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?number=KC10130_1U-H-WH&c=16)
-*   36x [1N4148 SOD-123 Diodes](https://www.aliexpress.com/item/1005005742644313.html)
-*   2x [Micro Switch Push Buttons](https://www.aliexpress.com/item/1068908059.html)
+| Thumbnail | Component | Qty | Description & Source Link |
+| :---: | :--- | :---: | :--- |
+| <img src="images/choc_socket.jpg" width="60" alt="Kailh Choc Sockets"> | **Kailh Choc Sockets** | 36x | [Kailh Choc Low-Profile Hot-Swap Sockets](https://www.aliexpress.com/item/32901654130.html) |
+| <img src="images/choc_switch.jpg" width="60" alt="Kailh Choc Switches"> | **Kailh Choc Switches** | 36x | [Kailh Choc Low-Profile Switches](https://it.aliexpress.com/item/1005005446722280.html) |
+| <img src="images/choc_keycap.jpg" width="60" alt="MBK Keycaps"> | **MBK Choc 1U Keycaps** | 34x | [MBK Choc Low-Profile 1U Keycaps](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?c=16) |
+| <img src="images/choc_keycap.jpg" width="60" alt="MBK Homing Keycaps"> | **MBK Choc Homing Keycaps** | 2x | [MBK Choc Low-Profile 1U Homing Keycaps](https://keycapsss.com/keyboard-parts/keycaps/169/mbk-choc-low-profile-blank-keycaps?number=KC10130_1U-H-WH&c=16) |
+| <img src="images/diode_1n4148.jpg" width="60" alt="1N4148 Diodes"> | **1N4148 SOD-123 Diodes** | 36x | [1N4148 SOD-123 Diodes](https://it.aliexpress.com/item/32849879904.html) |
+| <img src="images/micro_switch.png" width="60" alt="Reset Switch"> | **Micro Switch Buttons** | 2x | [Micro Switch Push Buttons](https://it.aliexpress.com/item/1005007308472247.html) |
 
 ### TRRS Version Components
 
-*   1x [TRRS Audio Cable](https://www.aliexpress.com/item/1005003613205582.html)
-*   2x [TRRS Jacks](https://www.aliexpress.com/item/33029465106.html)
-*   [Pin Connectors for Microcontroller](https://www.aliexpress.com/item/4000379224241.html)
-*   [Pro Micro ATMEGA32U4](https://www.aliexpress.com/item/32888212119.html)
+| Thumbnail | Component | Qty | Description & Source Link |
+| :---: | :--- | :---: | :--- |
+| <img src="images/trrs_cable.png" width="60" alt="TRRS Cable"> | **TRRS Audio Cable** | 1x | [TRRS Audio Cable](https://it.aliexpress.com/item/1005009383566193.html) |
+| <img src="images/trrs_jack.png" width="60" alt="TRRS Jacks"> | **TRRS Jacks** | 2x | [TRRS Jacks](https://www.aliexpress.com/item/33029465106.html) |
+| <img src="images/pin_headers.png" width="60" alt="Pin Connectors"> | **Pin Connectors** | - | [Pin Connectors for Microcontroller](https://it.aliexpress.com/item/1005005742644313.html) |
+| <img src="images/pro_micro.jpg" width="60" alt="Pro Micro"> | **Pro Micro ATMEGA32U4** | - | [Pro Micro ATMEGA32U4](https://www.aliexpress.com/item/32888212119.html) |
 
 ### Bluetooth Version Components
 
-*   [Pin Connectors for Microcontroller](https://www.aliexpress.com/item/1005005742644313.html)
-*   [NRF52840 Supermini (nice!nano V2.0 compatible)](https://www.aliexpress.com/item/1005006343285322.html)
+| Thumbnail | Component | Description & Source Link |
+| :---: | :--- | :--- |
+| <img src="images/pin_headers.png" width="60" alt="Pin Connectors"> | **Pin Connectors** | [Pin Connectors for Microcontroller](https://it.aliexpress.com/item/1005005742644313.html) |
+| <img src="images/nrf52840_supermini.jpg" width="60" alt="nRF52840 Supermini"> | **NRF52840 Supermini** | [NRF52840 Supermini (nice!nano V2.0 compatible)](https://www.aliexpress.com/item/1005006343285322.html) |
+| <img src="images/lipo_battery.jpg" width="60" alt="LiPo Battery"> | **3.7V 140mAh LiPo Battery** | [3.7V 140mAh Lithium Polymer Battery](https://it.aliexpress.com/item/32779771455.html) |
 
 ## Build Process
 
@@ -64,7 +71,7 @@ You can open the PCB in KiCad to inspect it:
 pcbnew output/pcbs/board.kicad_pcb
 ```
 
-![KiCad](../images/kicad.webp)
+![KiCad](images/kicad.webp)
 
 ### 3. Routing
 
@@ -144,4 +151,5 @@ You can use an online tool like [Convertio](https://convertio.co/) to convert DX
 ## References
 
 *   [Ergogen Part 4: Footprints & Cases](https://flatfootfox.com/ergogen-part4-footprints-cases/)
-*   [Ergogen HOWTOs](https://github.com/sloba-byte/ergogen_howtos)
+*   [Ergogen Official Documentation](https://docs.ergogen.xyz/)
+*   [Ergogen GitHub Repository](https://github.com/ergogen/ergogen)
