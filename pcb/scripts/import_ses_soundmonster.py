@@ -36,15 +36,16 @@ from util.ui_automation import (
     xdotool,
     wait_for_window,
     recorded_xvfb,
-    clipboard_store
+    clipboard_store,
 )
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+
 def run_export(pcb_file, ses_file, output_file, record=True):
 
-    recording_file = os.path.join('/tmp', 'export_dsn_screencast.ogv')
+    recording_file = os.path.join("/tmp", "export_dsn_screencast.ogv")
     ses_input_file = os.path.abspath(ses_file)
 
     save_as = False
@@ -54,48 +55,50 @@ def run_export(pcb_file, ses_file, output_file, record=True):
         pcb_output_file = os.path.abspath(output_file)
 
         if os.path.exists(pcb_output_file):
-            logger.error('PCB file already exists')
+            logger.error("PCB file already exists")
             exit(-1)
 
     xvfb_kwargs = {
-	    'width': 800,
-	    'height': 600,
-	    'colordepth': 24,
+        "width": 800,
+        "height": 600,
+        "colordepth": 24,
     }
 
-    with recorded_xvfb(recording_file, **xvfb_kwargs) if record else Xvfb(**xvfb_kwargs):
-        with PopenContext(['pcbnew', pcb_file], close_fds=True) as pcbnew_proc:
+    with (
+        recorded_xvfb(recording_file, **xvfb_kwargs) if record else Xvfb(**xvfb_kwargs)
+    ):
+        with PopenContext(["pcbnew", pcb_file], close_fds=True) as pcbnew_proc:
             clipboard_store(ses_input_file)
 
-            window = wait_for_window('pcbnew', 'Pcbnew', 10, False)
+            window = wait_for_window("pcbnew", "Pcbnew", 10, False)
 
-            logger.info('Focus main pcbnew window')
-            wait_for_window('pcbnew', 'Pcbnew')
+            logger.info("Focus main pcbnew window")
+            wait_for_window("pcbnew", "Pcbnew")
 
             # Needed to rebuild the menu, making sure it is actually built
-            xdotool(['windowsize', '--sync', window, '750', '600'])
+            xdotool(["windowsize", "--sync", window, "750", "600"])
 
-            wait_for_window('pcbnew', 'Pcbnew')
+            wait_for_window("pcbnew", "Pcbnew")
 
-            logger.info('File Menu')
-            xdotool(['key', 'alt+f', 'i', 's'])
+            logger.info("File Menu")
+            xdotool(["key", "alt+f", "i", "s"])
 
-            logger.info('Focus Import modal window')
-            wait_for_window('Import', 'Merge Specctra Session file')
+            logger.info("Focus Import modal window")
+            wait_for_window("Import", "Merge Specctra Session file")
 
-            logger.info('Pasting SES input file')
-            xdotool(['key', 'ctrl+a', 'ctrl+v', 'Return'])
+            logger.info("Pasting SES input file")
+            xdotool(["key", "ctrl+a", "ctrl+v", "Return"])
 
             # give the app some time to import
             time.sleep(2)
             if save_as:
-                logger.info('Saving as new file')
+                logger.info("Saving as new file")
                 clipboard_store(pcb_output_file)
-                xdotool(['key', 'ctrl+shift+s'])
-                xdotool(['key', 'ctrl+a', 'ctrl+v', 'Return'])
+                xdotool(["key", "ctrl+shift+s"])
+                xdotool(["key", "ctrl+a", "ctrl+v", "Return"])
             else:
-                logger.info('Saving into existing file')
-                xdotool(['key', 'ctrl+s'])
+                logger.info("Saving into existing file")
+                xdotool(["key", "ctrl+s"])
 
             time.sleep(2)
 
@@ -103,19 +106,25 @@ def run_export(pcb_file, ses_file, output_file, record=True):
 
     return ses_input_file
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='KiCad automated DRC runner')
 
-    parser.add_argument('kicad_pcb_file', help='KiCad layout file')
-    parser.add_argument('input_file', help='Input Specctra SES file')
-    parser.add_argument('--output-file', help='Output PCB file (optional, will save to original file if not set)',
-            required=False)
-    parser.add_argument('--record', help='Record the UI automation',
-        action='store_true'
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="KiCad automated DRC runner")
+
+    parser.add_argument("kicad_pcb_file", help="KiCad layout file")
+    parser.add_argument("input_file", help="Input Specctra SES file")
+    parser.add_argument(
+        "--output-file",
+        help="Output PCB file (optional, will save to original file if not set)",
+        required=False,
+    )
+    parser.add_argument(
+        "--record", help="Record the UI automation", action="store_true"
     )
 
     args = parser.parse_args()
 
-    export_result = run_export(args.kicad_pcb_file, args.input_file, args.output_file, args.record)
+    export_result = run_export(
+        args.kicad_pcb_file, args.input_file, args.output_file, args.record
+    )
 
-    logging.info(export_result);
+    logging.info(export_result)
