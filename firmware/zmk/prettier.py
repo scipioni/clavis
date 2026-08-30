@@ -29,19 +29,18 @@ def getLayer(data, middle=100, cell=16):
             rows.append(row.strip())
             row = ""
 
-    
-    
-    return layer % dict(name=name.upper(), display=name.capitalize(), 
-                        a1=rows[0].ljust(middle),
-                        a2=rows[1],
-                        b1=rows[2].ljust(middle),
-                        b2=rows[3],
-                        c1=rows[4].ljust(middle),
-                        c2=rows[5],
-                        g1=(" "*(3*cell) + rows[6]).ljust(middle),
-                        g2=rows[7],                       
-                        )
-
+    return layer % dict(
+        name=name.upper(),
+        display=name.capitalize(),
+        a1=rows[0].ljust(middle),
+        a2=rows[1],
+        b1=rows[2].ljust(middle),
+        b2=rows[3],
+        c1=rows[4].ljust(middle),
+        c2=rows[5],
+        g1=(" " * (3 * cell) + rows[6]).ljust(middle),
+        g2=rows[7],
+    )
 
 
 with open(sys.argv[1]) as f:
